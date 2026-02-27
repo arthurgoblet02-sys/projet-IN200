@@ -1,2 +1,2 @@
 # projet-IN200
-fourmi de Langton 
+fourmi de Langton o
