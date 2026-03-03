@@ -36,7 +36,7 @@ nb_etape = 0
 def etape():
         if case_fourmi == 0:
             orientation_fourmi = (orientation_fourmi - 90) % 360
-            case_fourmi = 
+            case_fourmi = None
         if case_fourmi == 1:
             orientation_fourmi = (orientation_fourmi + 90) % 360
 
