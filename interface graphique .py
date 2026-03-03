@@ -1,6 +1,7 @@
-import tkinter 
+import tkinter as tk
 
-print("test")
+root = tk.Tk()
+root.mainloop()
 
 
 
