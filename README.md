@@ -3,7 +3,7 @@
 ### Etudiants du projet :
 -Arthur Goblet 
 -Helio Lancon 
--Zayd
+-Zayd b 
 -Sedou
 
 ### Url de dépot du projet :
