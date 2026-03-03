@@ -59,6 +59,3 @@ for k in range (0,1):
 """ if event_bouton_play:
     while not event_bouton_pause:
          etape()    """
-
-
-
