@@ -1,4 +1,5 @@
-" creation du fond du jeu avec le bouton jouer au milieu de l'ecran "
+" creation du fond du jeu avec le bouton jouer au milieu de l'ecran."
+"IL MANQUE JUSTE DE RAJOUTER LE PLATEAU QUAND ON CLIQUE SUR LE BOUTON A LA LIGNE 17 "
 
 
 from tkinter import *
