@@ -1,7 +1,7 @@
 # Projet-IN200, la fourmi de Langton 
 ## MI-04
 ### Etudiants du projet :
--Arthur Goblet \n
+-Arthur Goblet 
 -Helio Lancon 
 -Zayd
 -Sedou
