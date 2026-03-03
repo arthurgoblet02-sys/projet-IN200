@@ -2,7 +2,7 @@
 ## MI-03
 ### Etudiant du projet:
 -Arthur Goblet
--Helio
+-Helio Lancon 
 -Zayd
 -Sedou
 
