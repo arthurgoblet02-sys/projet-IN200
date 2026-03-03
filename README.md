@@ -1,4 +1,4 @@
-# projet-IN200
+# projet-IN200, la fourmi de Langton 
 ## MI-03
 ### Etudiant du projet:
 -Arthur Goblet
