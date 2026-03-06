@@ -2,7 +2,7 @@
 "IL MANQUE JUSTE DE RAJOUTER LE PLATEAU QUAND ON CLIQUE SUR LE BOUTON A LA LIGNE 17 "
 
 
-from tkinter import *
+from tkinter import * 
 from plateau import *
 
 window = Tk()
