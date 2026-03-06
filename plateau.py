@@ -5,7 +5,7 @@ from tkinter import *
 def Plateau (window):
     nbr_colonne = len(grille)
     nbr_ligne = len(grille[0])
-    taille_case = 10
+    taille_case = 60
     colonne = nbr_colonne * taille_case
     ligne = nbr_ligne * taille_case
     canva = Canvas (window,width=colonne,height=ligne, bg="white" )
@@ -18,5 +18,5 @@ def Plateau (window):
                 couleur = "black"
             else:
                 couleur = "white"
-            canva.create_rectangle ((x1,x1),(y1,y1) ,fill= couleur, outline= "green" ) 
+            canva.create_rectangle ((x1,x1,y1,y1 , fill= couleur, outline= "green" ) 
     return canva 
