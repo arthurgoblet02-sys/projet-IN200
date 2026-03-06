@@ -16,5 +16,5 @@ def Plateau (window):
                 couleur = "black"
             else:
                 couleur = "white"
-            canva.create_rectangle (i * taille_case, j*taille_case,fill=couleur outline= "green" ) 
+            canva.create_rectangle (i * taille_case, j*taille_case,fill= couleur outline= "green" ) 
     return canva 
