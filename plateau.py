@@ -14,11 +14,11 @@ def Plateau (window):
         for j in range(nbr_ligne):
             x1 = i* taille_case
             y1 = j * taille_case
-            x2 = x1 * taille_case
-            y2 = x2 * taille_case
+            x2 = x1 + taille_case
+            y2 = x2 + taille_case
             if grille[i][j] == 1:
                 couleur = "black"
             else:
                 couleur = "white"
-            canva.create_rectangle (x1,y1,x2,y2 , fill= couleur, outline= "green" ) 
+            canva.create_rectangle (x1,y1,x2,y2 , fill= couleur, outline= "black" ) 
     return canva 
