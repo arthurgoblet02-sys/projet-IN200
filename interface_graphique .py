@@ -14,10 +14,10 @@ arriere_plan = Label(window ,image =fond)
 arriere_plan.grid(row=0, column=0, rowspan=3, columnspan=3)
 window.grid_rowconfigure(1, weight=1)
 window.grid_columnconfigure(1,weight=1)
-plateau_jeu = Plateau (window) 
+
 def on_button_click():
     bouton_jouer.destroy()
-    return plateau_jeu
+    return Plateau (window)
     
 
 bouton_jouer = Button (window , text="JOUER", bg="green", command=on_button_click)
