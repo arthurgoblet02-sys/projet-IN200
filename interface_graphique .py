@@ -11,7 +11,7 @@ window.geometry("800x600")
 
 fond = PhotoImage(file = "fond.png")
 arriere_plan = Label(window ,image =fond) 
-arriere_plan.grid(row=0, column=0, rowspan=3, columnspan=3)
+arriere_plan.grid(row=0, column=0, rowspan=2, columnspan=2)
 window.grid_rowconfigure(1, weight=1)
 window.grid_columnconfigure(1,weight=1)
 
@@ -20,7 +20,7 @@ def on_button_click():
     return Plateau (window)
     
 
-bouton_jouer = Button (window , text="JOUER", bg="green", command=on_button_click)
+bouton_jouer = Button (window , text="PLAY", bg="green", command=on_button_click)
 bouton_jouer.grid(row=1 ,column=1)
 
 window.mainloop()
