@@ -18,7 +18,7 @@ window.grid_columnconfigure(1,weight=1)
 
 def on_button_click():
     bouton_jouer.destroy()
-    return Plateau (window), Play, Pause, Next
+    return Plateau (window), bouton_Play, bouton_Pause, bouton_Next
     
 
 bouton_jouer = Button (window , text="PLAY", bg="green", command=on_button_click)
