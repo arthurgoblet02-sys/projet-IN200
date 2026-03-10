@@ -8,13 +8,15 @@ from bouton import *
 
 window = Tk()
 window.title("Jeu de la fourmi de Langton")
-window.geometry("800x600")
+window.geometry("850x600")
 
 fond = PhotoImage(file = "fond.png")
 arriere_plan = Label(window ,image =fond) 
 arriere_plan.grid(row=0, column=0, rowspan=3, columnspan=3)
 window.grid_rowconfigure(1, weight=1)
 window.grid_columnconfigure(1,weight=1)
+
+
 
 def on_button_click():
     bouton_jouer.destroy()
