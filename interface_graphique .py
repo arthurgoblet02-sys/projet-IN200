@@ -23,8 +23,8 @@ def on_button_click():
     return Plateau (window), bouton_Play, bouton_Pause, bouton_Next
     
 
-bouton_jouer = Button (window , text="PLAY", bg="green", command=on_button_click)
-bouton_jouer.grid(row=1 ,column=1)
+bouton_jouer = Button (window , text="PLAY", bg="green",fg="white", command=on_button_click)
+bouton_jouer.grid(row=1 ,column=1,ipady=10,ipadx=10)
 
 window.mainloop()
 
