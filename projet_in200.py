@@ -8,7 +8,7 @@ event_bouton_pause = False
 event_bouton_next = None
 (droite, haut, gauche, bas) = (0, 90, 180, 270)  
 
-grille = [5*[0] for _ in range (0, 5)]  #  numpy.array()
+grille = [10*[0] for _ in range (0, 10)]  #  numpy.array()
 case_fourmi = grille[2][2] 
 orientation_fourmi = droite
 (i, j) = (2, 2)      
