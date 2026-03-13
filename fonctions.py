@@ -1,4 +1,6 @@
-""" fichier où on écrira les fonctions nécéssaires pour le main """ 
+""" fichier où on écrira les fonctions nécéssaires pour le main """
+" rajouter une fonction vitesse pour augmenter la vitesse d'execution des etape quand on clique sur play "
+"rajouter une fonction permetant de revenir en arriere d'une etape " 
 
 from math import sin, cos, radians
 
