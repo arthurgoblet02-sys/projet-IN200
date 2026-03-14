@@ -1,21 +1,21 @@
 from fonctions import step, back_step
-from time import time 
+from time import sleep
 
 """ valeurs initiales """ 
 
-start = time()
-
 event_bouton_play = True
 event_bouton_pause = False
-event_bouton_next = None
+event_bouton_next = False
 (droite, haut, gauche, bas) = (0, 90, 180, 270)  
 
-side = 25
-grille = [side*[0] for _ in range (0, side)]  #numpy.array()
-case_fourmi = grille[side // 2][side // 2] 
+side = 5
 orientation_fourmi = droite
-(i, j) = (side // 2, side // 2)      
+(i, j) = (side // 2, side // 2) 
+
+grille = [side*[0] for _ in range (side)]  #numpy.array()
+case_fourmi = grille[i][j]      
 nb_etape = 0
+speed = [0.25, 1, 10, 10]
 
 """ début du programme principal """
 
@@ -28,14 +28,9 @@ nb_etape = 0
 
 t = 10
 
-for _ in range(0,t):
+for p in range(t):
       (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side) = step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
-
-for _ in range(0,t):
-      (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side) = back_step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
-
-
-
-end = time()
-
-print("time =", end - start, "s")
+      sleep(1 / speed[3])
+      print("\n", "step", p+1, "\n")
+      for k in range(side):
+            print((grille[k])) 
