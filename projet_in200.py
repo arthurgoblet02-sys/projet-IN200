@@ -15,7 +15,7 @@ orientation_fourmi = droite
 grille = [side*[0] for _ in range (side)]  #numpy.array()
 case_fourmi = grille[i][j]      
 nb_etape = 0
-speed = [0.25, 1, 10, 10]
+speed = 10
 
 """ début du programme principal """
 
@@ -30,7 +30,7 @@ t = 10
 
 for p in range(t):
       (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side) = step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
-      sleep(1 / speed[3])
+      sleep(1 / speed)
       print("\n", "step", p+1, "\n")
-      for k in range(side):
-            print((grille[k])) 
+      for k in grille:
+            print(k) 
