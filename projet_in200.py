@@ -1,5 +1,4 @@
-from math import sin, cos, radians
-from fonctions import etape
+from fonctions import step, back_step
 from time import time 
 
 """ valeurs initiales """ 
@@ -11,7 +10,7 @@ event_bouton_pause = False
 event_bouton_next = None
 (droite, haut, gauche, bas) = (0, 90, 180, 270)  
 
-side = 5
+side = 25
 grille = [side*[0] for _ in range (0, side)]  #numpy.array()
 case_fourmi = grille[side // 2][side // 2] 
 orientation_fourmi = droite
@@ -27,8 +26,15 @@ nb_etape = 0
 
 """ tests du programme """
 
-for _ in range(0,10_000):
-      (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side) = etape(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+t = 10
+
+for _ in range(0,t):
+      (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side) = step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+
+for _ in range(0,t):
+      (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side) = back_step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+
+
 
 end = time()
 
