@@ -28,3 +28,5 @@ bouton_play.grid(row=1 ,column=1,ipady=10,ipadx=10)
 
 window.mainloop()
 
+"il faudra qu'on rajoute la fourmi"
+
