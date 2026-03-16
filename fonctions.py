@@ -4,10 +4,22 @@
 
 from math import sin, cos, radians
 
-def etape(grille, case_fourmi, orientation_fourmi, i, j, nb_etape):
+def step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
         orientation_fourmi = ( orientation_fourmi + 270 - 180 * (case_fourmi) ) % 360
-        case_fourmi = grille[( i-int(sin(orientation_fourmi)) ) % 5][( j+int(cos(orientation_fourmi)) ) % 5]
+        case_fourmi = grille[(i-int(sin(radians(orientation_fourmi)))) % side][(j+int(cos(radians(orientation_fourmi)))) % side]
         grille[i][j] += (-1)**grille[i][j]
+        (i, j) = ((i-int(sin(radians(orientation_fourmi))) ) % side, (j+int(cos(radians(orientation_fourmi)))) % side)
         nb_etape += 1
-        (i, j) = ((i-int(sin(radians(orientation_fourmi))) ) % 5, (j+int(cos(radians(orientation_fourmi)))) % 5)
-        return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape)
+        return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+
+
+def back_step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
+        (i, j) = ((i+int(sin(radians(orientation_fourmi))) ) % side, (j-int(cos(radians(orientation_fourmi)))) % side) 
+        grille[i][j] += (-1)**grille[i][j]
+        case_fourmi = grille[i][j]
+        orientation_fourmi = ( orientation_fourmi - 270 + 180 * (case_fourmi) ) % 360
+        nb_etape -= 1
+        return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+
+
+

@@ -1,11 +1,11 @@
 "creer une fonction Plateau pour creer le plateau pour que je puisse le mettre dans interface graphique   "
-from projet_in200 import grille
+from projet_in200 import grille, side
 from tkinter import *
 
 def Plateau (window):
     nbr_ligne = len(grille)
     nbr_colonne = len(grille[0])
-    taille_case = 100
+    taille_case = 20
     colonne = nbr_colonne * taille_case
     ligne = nbr_ligne * taille_case
     canva = Canvas (window,width=colonne,height=ligne, bg="white" )
