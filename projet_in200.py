@@ -1,5 +1,6 @@
 from fonctions import step, back_step
 from time import sleep
+# from sauvegarde import charger # <-- Mis en COM (Désactivés car j'ai pas encore finit )
 
 """ valeurs initiales """ 
 
@@ -7,6 +8,11 @@ event_bouton_play = True
 event_bouton_pause = False
 event_bouton_next = False
 (droite, haut, gauche, bas) = (0, 90, 180, 270)  
+#pas sur encore 
+# donnees = charger()
+# if donnees != None:
+#     (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side, speed) = donnees
+# else:
 
 side = 5
 orientation_fourmi = droite
