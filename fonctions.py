@@ -21,5 +21,16 @@ def back_step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
         nb_etape -= 1
         return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
 
+ 
 
+en_pause = True
 
+def fonction_play():
+        global en_pause
+        en_pause = False
+        print("Play")
+
+def fonction_pause():
+        global en_pause
+        en_pause = True
+        print("Pause")
