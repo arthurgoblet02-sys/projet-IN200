@@ -23,6 +23,7 @@ def charger():
         i = int(mots[2])
         j = int(mots[3])
         nb_etape = int(mots[4])
+        side = int(mots[5])
         speed = int(mots[6])
         grille = []
         for ligne in fichier:
@@ -40,3 +41,4 @@ def charger():
         return None
     
     #pas encore trouvé de test. 
+    #aide https://docs.python.org/fr/3/, https://www.w3schools.com/python/,https://www.geeksforgeeks.org/python-programming-language/
