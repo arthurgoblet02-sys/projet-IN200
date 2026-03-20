@@ -10,6 +10,7 @@ def step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
         grille[i][j] += (-1)**grille[i][j]
         (i, j) = ((i-int(sin(radians(orientation_fourmi))) ) % side, (j+int(cos(radians(orientation_fourmi)))) % side)
         nb_etape += 1
+<<<<<<< Updated upstream
         return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
 
 
@@ -23,3 +24,19 @@ def back_step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
 
 
 
+=======
+        (i, j) = ((i-int(sin(radians(orientation_fourmi))) ) % 5, (j+int(cos(radians(orientation_fourmi)))) % 5)
+        return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape)
+
+en_pause = True
+
+def fonction_play():
+        global en_pause
+        en_pause = False
+        print("Play")
+
+def fonction_pause():
+        global en_pause
+        en_pause = True
+        print("Pause")
+>>>>>>> Stashed changes
