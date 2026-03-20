@@ -20,7 +20,7 @@ window.grid_columnconfigure(1,weight=1)
 def button_jouer():
     bouton_play.destroy()
     # bouton_stop.grid(row=2, column=1, ipady=5, ipadx=5)
-    return Plateau (window), bouton_Play, bouton_Pause, bouton_Next
+    return Plateau (window), bouton_Play, bouton_Pause, bouton_Next,#bouton_stop 
     
 
 bouton_play = Button (window , text="PLAY", bg="green",fg="white", command=button_jouer)
