@@ -10,7 +10,7 @@ window = Tk()
 window.title("Jeu de la fourmi de Langton")
 window.geometry("850x600")
 
-fond = PhotoImage(file = "fond.png")
+fond = PhotoImage(file = "fond.png",master=window)
 arriere_plan = Label(window ,image =fond) 
 arriere_plan.grid(row=0, column=0, rowspan=3, columnspan=3)
 window.grid_rowconfigure(1, weight=1)

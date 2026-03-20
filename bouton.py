@@ -9,6 +9,6 @@ bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
 bouton_Pause = Button(text="Pause",command=fonction_pause)
 bouton_Pause.grid(row=1,column=0,padx=20)
 " creer le bouton, il faut qu'il s'appelle comme ca car il est appeler comme ca dans interface graphique lui c'est row=1 ,column=0,padx=20"
-bouton_Next = Button(text="Next",command=etape)
+bouton_Next = Button(text="Next",command=step)
 bouton_Next.grid(row=2, column=0, padx=20,pady=20)
 
