@@ -8,7 +8,7 @@ event_bouton_pause = False
 event_bouton_next = False
 (droite, haut, gauche, bas) = (0, 90, 180, 270)  
 
-side = 5
+side = 25
 orientation_fourmi = droite
 (i, j) = (side // 2, side // 2) 
 
