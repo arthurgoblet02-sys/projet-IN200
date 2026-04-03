@@ -3,6 +3,7 @@
 "rajouter une fonction permetant de revenir en arriere d'une etape " 
 
 from math import sin, cos, radians
+from projet_in200 import *
 
 def step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
         orientation_fourmi = ( orientation_fourmi + 270 - 180 * (case_fourmi) ) % 360
@@ -20,6 +21,8 @@ def back_step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
         orientation_fourmi = ( orientation_fourmi - 270 + 180 * (case_fourmi) ) % 360
         nb_etape -= 1
         return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+
+        
 
 
 
