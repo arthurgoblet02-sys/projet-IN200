@@ -5,7 +5,7 @@ from tkinter import *
 def Plateau (window):
     nbr_ligne = len(grille)
     nbr_colonne = len(grille[0])
-    taille_case = 20
+    taille_case = 400 / side
     colonne = nbr_colonne * taille_case
     ligne = nbr_ligne * taille_case
     canva = Canvas (window,width=colonne,height=ligne, bg="white" )
