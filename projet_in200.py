@@ -23,12 +23,6 @@ case_fourmi = grille[i][j]
 nb_etape = 0
 speed = 100
 
-""" début du programme principal """
-
-""" if event_bouton_play:
-    while not event_bouton_pause:
-         etape(grille, case_fourmi, orientation_fourmi, i, j, nb_etape) """
-
 
 """ tests du programme """
 
