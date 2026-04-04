@@ -14,7 +14,7 @@ event_bouton_next = False
 #     (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side, speed) = donnees
 # else:
 
-side = 25
+side = 5
 orientation_fourmi = droite
 (i, j) = (side // 2, side // 2) 
 
