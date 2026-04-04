@@ -3,24 +3,24 @@
 "rajouter une fonction permetant de revenir en arriere d'une etape " 
 
 from math import sin, cos, radians
-from projet_in200 import *
+#from projet_in200 import *
 
-def step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
-        orientation_fourmi = ( orientation_fourmi + 270 - 180 * (case_fourmi) ) % 360
-        case_fourmi = grille[(i-int(sin(radians(orientation_fourmi)))) % side][(j+int(cos(radians(orientation_fourmi)))) % side]
-        grille[i][j] += (-1)**grille[i][j]
-        (i, j) = ((i-int(sin(radians(orientation_fourmi))) ) % side, (j+int(cos(radians(orientation_fourmi)))) % side)
+def step(grille, etat_case_fourmi, orientation_fourmi, i_j, nb_etape, side):
+        orientation_fourmi = ( orientation_fourmi + 270 - 180 * (etat_case_fourmi) ) % 360
+        etat_case_fourmi = grille[(i_j[0] - int(sin(radians(orientation_fourmi)))) % side][(i_j[1] + int(cos(radians(orientation_fourmi)))) % side]
+        grille[i_j[0]][i_j[1]] += (-1)**grille[i_j[0]][i_j[1]]
+        (i_j[0], i_j[1]) = ((i_j[0] - int(sin(radians(orientation_fourmi))) ) % side, (i_j[1] + int(cos(radians(orientation_fourmi)))) % side)
         nb_etape += 1
-        return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+        return (grille, etat_case_fourmi, orientation_fourmi, i_j, nb_etape, side)
 
 
-def back_step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side):
-        (i, j) = ((i+int(sin(radians(orientation_fourmi))) ) % side, (j-int(cos(radians(orientation_fourmi)))) % side) 
-        grille[i][j] += (-1)**grille[i][j]
-        case_fourmi = grille[i][j]
-        orientation_fourmi = ( orientation_fourmi - 270 + 180 * (case_fourmi) ) % 360
+def back_step(grille, etat_case_fourmi, orientation_fourmi, i_j, nb_etape, side):
+        (i_j[0], i_j[1]) = ((i_j[0] + int(sin(radians(orientation_fourmi))) ) % side, (i_j[1] - int(cos(radians(orientation_fourmi)))) % side) 
+        grille[i_j[0]][i_j[1]] += (-1)**grille[i_j[0]][i_j[1]]
+        etat_case_fourmi = grille[i_j[0]][i_j[1]]
+        orientation_fourmi = ( orientation_fourmi - 270 + 180 * (etat_case_fourmi) ) % 360
         nb_etape -= 1
-        return (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+        return (grille, etat_case_fourmi, orientation_fourmi, i_j, nb_etape, side)
 
  
 

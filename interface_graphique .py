@@ -21,14 +21,22 @@ window.grid_columnconfigure(1,weight=1)
 
 def button_play():
     bouton_play.destroy()
-    bouton_moins_10.grid(row=2, column=0, ipadx=10, ipady=5)
-    bouton_moins_1.grid(row=2, column=1, padx=10, ipadx=10, ipady=5)
-    bouton_moins_0_25.grid(row=2, column=2, ipadx=10, ipady=5)
-    texte_vitesse.grid(row=1, column=3, ipadx=10, ipady=0, padx=10)
-    bouton_reset.grid(row=2, column=4, padx=10, ipadx=10, ipady=1)
-    bouton_plus_0_25.grid(row=2, column=5, ipadx=10, ipady=5)
-    bouton_plus_1.grid(row=2, column=6, padx=0, ipadx=10, ipady=5)
-    bouton_plus_10.grid(row=2, column=7, ipadx=10, ipady=5)
+    bouton_moins_10.grid(row=2, column=0)
+    bouton_moins_1.grid(row=2, column=1)
+    bouton_moins_0_25.grid(row=2, column=2)
+    texte_vitesse.grid(row=1, column=3)
+    bouton_reset.grid(row=2, column=4)
+    bouton_plus_0_25.grid(row=2, column=5)
+    bouton_plus_1.grid(row=2, column=6)
+    bouton_plus_10.grid(row=2, column=7)
+
+    """test pour voir où sont les colonnes"""
+    """l = ["bouton" + str(i) for i in range(15)]
+    for b in l:
+        n = int(b[-1])
+        b = Button(window, text=b[-1])
+        b.grid(row=2, column=n)"""
+    
     #bouton_play2.grid(row=2, column=1, ipady=5, ipadx=5)
     #bouton_stop.grid(row=2, column=1, ipady=5, ipadx=5)
     #bouton_next.grid(row=2, column=1, ipady=5, ipadx=5)
