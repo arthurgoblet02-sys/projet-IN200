@@ -9,7 +9,7 @@ def Plateau (window):
     colonne = nbr_colonne * taille_case
     ligne = nbr_ligne * taille_case
     canva = Canvas (window,width=colonne,height=ligne, bg="white" )
-    canva.grid(row=1,column= 1 )
+    canva.grid(row=3,column=30 )
     for i in range(nbr_ligne):
         for j in range(nbr_colonne):
             couleur = "white"
