@@ -21,7 +21,7 @@ orientation_fourmi = droite
 grille = [side*[0] for _ in range (side)]  #numpy.array()
 case_fourmi = grille[i][j]      
 nb_etape = 0
-speed = 10
+speed = 100
 
 """ début du programme principal """
 
