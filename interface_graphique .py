@@ -30,15 +30,6 @@ def button_play():
     bouton_plus_1.grid(row=2, column=4)
     bouton_plus_10.grid(row=2, column=4)"""
 
-    bouton_moins_10.pack(row=2)
-    bouton_moins_1.pack()
-    bouton_moins_0_25.pack()
-    texte_vitesse.pack()
-    bouton_reset.pack()
-    bouton_plus_0_25.pack()
-    bouton_plus_1.pack()
-    bouton_plus_10.pack()
-
     #bouton_play2.grid(row=2, column=1, ipady=5, ipadx=5)
     #bouton_stop.grid(row=2, column=1, ipady=5, ipadx=5)
     #bouton_next.grid(row=2, column=1, ipady=5, ipadx=5)
