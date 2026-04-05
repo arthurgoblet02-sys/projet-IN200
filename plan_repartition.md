@@ -2,13 +2,13 @@
 
 " Il faut qu'on note ce que chacun fait dans le projet "
 
-## Arthur - 
+### Arthur - 
 
-## Helio - 
+### Helio - 
 
 fonctions d'étape d'avance et de recul, gestion de la vitesse, ajout de n fourmis
 
-## Zayd -
+### Zayd -
 
-## Seydou - 
+### Seydou - 
 
