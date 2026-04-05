@@ -14,7 +14,7 @@ from random import randint
 #mettre des numpy.array() partout au lieu des lists
 
 #valeurs initiales à déterminer
-nb_fourmis = 2
+nb_fourmis = 1
 side = 5
 #liste_case_fourmi = [[side//2, side//2] for _ in range(nb_fourmis)]
 liste_case_fourmi = [[randint(0,side-1), randint(0,side-1)] for _ in range(nb_fourmis)]
@@ -25,7 +25,7 @@ grille = [side*[0] for _ in range (side)]
 (droite, haut, gauche, bas) = (0, 90, 180, 270) 
 nb_etape = 0
 modulo = 0
-speed = 10
+speed = 1000
 liste_orientation_fourmi = nb_fourmis * [droite]
 liste_etat_case_fourmi = nb_fourmis * [0]
 
