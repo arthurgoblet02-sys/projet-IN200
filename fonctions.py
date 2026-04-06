@@ -1,26 +1,58 @@
+from valeurs_initiales import *
 from math import sin, cos, radians
-#from projet_in200 import *
+from time import sleep
 
-def step(grille, etat_case_fourmi, orientation_fourmi, i_j, nb_etape, side, nb_fourmis, modulo):
-        etat_case_fourmi = grille[i_j[0]][i_j[1]]
-        orientation_fourmi = ( orientation_fourmi + 270 - 180 * (etat_case_fourmi) ) % 360
-        etat_case_fourmi = grille[(i_j[0] - int(sin(radians(orientation_fourmi)))) % side][(i_j[1] + int(cos(radians(orientation_fourmi)))) % side]
-        grille[i_j[0]][i_j[1]] += (-1)**grille[i_j[0]][i_j[1]]
-        (i_j[0], i_j[1]) = ((i_j[0] - int(sin(radians(orientation_fourmi))) ) % side, (i_j[1] + int(cos(radians(orientation_fourmi)))) % side)
-        nb_etape += 1
-        modulo = (modulo + 1) % nb_fourmis
+# 4 états : 0 (blanc), 1 (noir), 2 (vert), 3 (rouge) - orientation : D, G, G, D
+
+
+def next_():
+      
+      global grille, nb_etape, nb_fourmis, side, liste_etat_case_fourmi, liste_orientation_fourmi, liste_case_fourmi
+
+      for k in range(nb_fourmis):
+
+                #actualisation de l'état de la case de la fourmi
+                liste_etat_case_fourmi[k] = grille[liste_case_fourmi[k][0]][ liste_case_fourmi[k][1]] 
+
+                #changement de l'orientation selon l'état de la case
+                if liste_etat_case_fourmi[k] % 3 == 0:
+                        liste_orientation_fourmi[k] = (liste_orientation_fourmi[k] - 90) % 360
+                else:
+                        liste_orientation_fourmi[k] = (liste_orientation_fourmi[k] + 90) % 360
+
+                #stockage des anciennes coordonnées et avancement d'une case (calcul des nouvelles coordonnées) 
+                ancienne_ligne = liste_case_fourmi[k][0]
+                ancienne_colonne = liste_case_fourmi[k][1]
+                (liste_case_fourmi[k][0], liste_case_fourmi[k][1]) = ((liste_case_fourmi[k][0] - int(sin(radians(liste_orientation_fourmi[k]))) ) % side, (liste_case_fourmi[k][1] + int(cos(radians(liste_orientation_fourmi[k])))) % side)
+                
+                #changement de couleur de la case passée 
+                grille[ancienne_ligne][ancienne_colonne] = (grille[ancienne_ligne][ancienne_colonne] + 1) % 4
         
-        return (grille, etat_case_fourmi, orientation_fourmi, i_j, nb_etape, side, nb_fourmis, modulo)
+      nb_etape += 1
 
 
-def back_step(grille, etat_case_fourmi, orientation_fourmi, i_j, nb_etape, side, nb_fourmis, modulo):
-        (i_j[0], i_j[1]) = ((i_j[0] + int(sin(radians(orientation_fourmi))) ) % side, (i_j[1] - int(cos(radians(orientation_fourmi)))) % side) 
-        grille[i_j[0]][i_j[1]] += (-1)**grille[i_j[0]][i_j[1]]
-        etat_case_fourmi = grille[i_j[0]][i_j[1]]
-        orientation_fourmi = ( orientation_fourmi - 270 + 180 * (etat_case_fourmi) ) % 360
+def back_():
+
+        global grille, nb_etape, nb_fourmis, side, liste_etat_case_fourmi, liste_orientation_fourmi, liste_case_fourmi
+        
+        for k in range(nb_fourmis):
+
+                #calcul des anciennes coordonnées et recul d'une case
+                (liste_case_fourmi[k][0], liste_case_fourmi[k][1]) = ((liste_case_fourmi[k][0] + int(sin(radians(liste_orientation_fourmi[k]))) ) % side, (liste_case_fourmi[k][1] - int(cos(radians(liste_orientation_fourmi[k])))) % side)
+
+                #remise de la couleur d'origine de la case 
+                grille[liste_case_fourmi[k][0]][liste_case_fourmi[k][1]] = (grille[liste_case_fourmi[k][0]][liste_case_fourmi[k][1]] - 1) % 4
+
+                #actualisation de l'état de la case de la fourmi
+                liste_etat_case_fourmi[k] = grille[liste_case_fourmi[k][0]][ liste_case_fourmi[k][1]] 
+
+                #remise de l'orientation d'origine selon l'état de la case
+                if liste_etat_case_fourmi[k] % 3 == 0:
+                        liste_orientation_fourmi[k] = (liste_orientation_fourmi[k] + 90) % 360
+                else:
+                        liste_orientation_fourmi[k] = (liste_orientation_fourmi[k] - 90) % 360
+        
         nb_etape -= 1
-        modulo = (modulo - 1) % nb_fourmis
-        return (grille, etat_case_fourmi, orientation_fourmi, i_j, nb_etape, side, nb_fourmis, modulo)
 
  
 
@@ -35,3 +67,5 @@ def fonction_pause():
         global en_pause
         en_pause = True
         print("Pause")
+
+

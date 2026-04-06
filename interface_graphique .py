@@ -5,7 +5,7 @@
 from tkinter import * 
 from plateau import *
 #from bouton import *
-from projet_in200 import speed 
+from valeurs_initiales import speed 
 from time import sleep 
 
 window = Tk()
@@ -21,14 +21,14 @@ window.grid_columnconfigure(1,weight=1)
 
 def button_play():
     bouton_play.destroy()
-    """bouton_moins_10.grid(row=2, column=0)
-    bouton_moins_1.grid(row=2, column=1, padx=10)
-    bouton_moins_0_25.grid(row=2, column=1, padx=10)
-    texte_vitesse.grid(row=1, column=2)
-    bouton_reset.grid(row=2, column=2, padx=10)
-    bouton_plus_0_25.grid(row=2, column=3, padx=10)
-    bouton_plus_1.grid(row=2, column=4)
-    bouton_plus_10.grid(row=2, column=4)"""
+    bouton_moins_10.grid(row=2, column=0, padx=100)
+    bouton_moins_1.grid(row=2, column=0, padx=150)
+    bouton_moins_0_25.grid(row=2, column=1, padx=50)
+    texte_vitesse.grid(row=1, column=3)
+    bouton_reset.grid(row=2, column=3)
+    bouton_plus_0_25.grid(row=2, column=4, padx=10)
+    bouton_plus_1.grid(row=2, column=5, padx=10)
+    bouton_plus_10.grid(row=2, column=6, padx=10)
 
     #bouton_play2.grid(row=2, column=1, ipady=5, ipadx=5)
     #bouton_stop.grid(row=2, column=1, ipady=5, ipadx=5)

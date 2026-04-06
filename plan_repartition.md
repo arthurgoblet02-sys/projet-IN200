@@ -6,7 +6,7 @@
 
 ### Helio - 
 
-fonctions d'étape d'avance et de recul, gestion de la vitesse, ajout de n fourmis
+programme principal, fonctions d'étapes, gestion de la vitesse
 
 ### Zayd -
 
