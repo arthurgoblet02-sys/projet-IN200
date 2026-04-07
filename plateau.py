@@ -8,12 +8,7 @@ def Plateau (window):
     taille_case = 500 / side
     colonne = nbr_colonne * taille_case
     ligne = nbr_ligne * taille_case
-    canva = Canvas (window,width=colonne,height=ligne, bg="white" )
-<<<<<<< HEAD
-    
-=======
-    canva.grid(row=3, columnspan=15)
->>>>>>> 8abf1bb17ece465551c92b44d636c0a20e7cf313
+    canvas = Canvas (window,width=colonne,height=ligne, bg="white)
     for i in range(nbr_ligne):
         for j in range(nbr_colonne):
             couleur = "white"
@@ -23,5 +18,5 @@ def Plateau (window):
             y2 = y1 + taille_case
             if grille[i][j] == 1:
                 couleur = "black"
-            canva.create_rectangle (x1,y1,x2,y2 , fill= couleur, outline= "white" ) 
-    return canva 
+            canvas.create_rectangle (x1,y1,x2,y2 , fill= couleur, outline= "white" ) 
+    return canvas
