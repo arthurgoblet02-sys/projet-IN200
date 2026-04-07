@@ -5,7 +5,7 @@
 from tkinter import * 
 from plateau import *
 #from bouton import *
-from projet_in200 import speed 
+from valeurs_initiales import speed 
 from time import sleep 
 
 window = Tk()
@@ -23,11 +23,30 @@ frame=Frame(window)     "trouver sur internet comment utiliser frame"
 
 def button_play():
     bouton_play.destroy()
+<<<<<<< HEAD
     frame.grid(row=0,column=4,sticky="ne", padx=10,pady=10)
     plateau = Plateau (window)
     plateau.grid(row=3, column= 1 ,columnspan=5)
 
     
+=======
+    bouton_moins_10.grid(row=2, column=0, padx=100)
+    bouton_moins_1.grid(row=2, column=0, padx=150)
+    bouton_moins_0_25.grid(row=2, column=1, padx=50)
+    texte_vitesse.grid(row=1, column=3)
+    bouton_reset.grid(row=2, column=3)
+    bouton_plus_0_25.grid(row=2, column=4, padx=10)
+    bouton_plus_1.grid(row=2, column=5, padx=10)
+    bouton_plus_10.grid(row=2, column=6, padx=10)
+
+    #bouton_play2.grid(row=2, column=1, ipady=5, ipadx=5)
+    #bouton_stop.grid(row=2, column=1, ipady=5, ipadx=5)
+    #bouton_next.grid(row=2, column=1, ipady=5, ipadx=5)
+    #while not on_button_pause_click:
+         #(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side) = step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
+         #sleep(1 / speed)
+    return Plateau (window), #bouton_Play, bouton_Pause, bouton_Next,#bouton_stop 
+>>>>>>> 8abf1bb17ece465551c92b44d636c0a20e7cf313
 
 def on_button_plus_10_click():
         global speed 
