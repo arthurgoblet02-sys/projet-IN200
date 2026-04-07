@@ -1,5 +1,5 @@
 "creer une fonction Plateau pour creer le plateau pour que je puisse le mettre dans interface graphique   "
-from projet_in200 import grille, side
+from valeurs_initiales import grille, side
 from tkinter import *
 
 def Plateau (window):

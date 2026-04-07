@@ -7,6 +7,7 @@ import plateau
 #from bouton import *
 from valeurs_initiales import speed 
 from time import sleep 
+from fonctions import *
 
 window = Tk()
 window.title("Jeu de la fourmi de Langton")
@@ -18,8 +19,6 @@ arriere_plan.grid(row=0, column=0, rowspan=15, columnspan=15)
 window.grid_rowconfigure(1, weight=1)
 window.grid_columnconfigure(1,weight=1)
 frame=Frame(window)   #"trouver sur internet comment utiliser frame"
-
-
 
 def button_play():
     bouton_play.destroy()
@@ -93,7 +92,6 @@ bouton_play.grid(row=1 ,column=1,ipady=10,ipadx=10)
 
 bouton_moins_10 = Button(frame, text="<<<", command=on_button_moins_10_click)
 
-
 bouton_moins_1 = Button(frame, text="<<", command=on_button_moins_1_click)
 
 bouton_moins_0_25 = Button(frame, text="<", command=on_button_moins_0_25_click)
@@ -106,6 +104,7 @@ bouton_plus_0_25 = Button(frame, text=">", command=on_button_plus_O_25_click)
 bouton_plus_1 = Button(frame, text=">>", command=on_button_plus_1_click)
 
 bouton_plus_10 = Button(frame, text=">>>", command=on_button_plus_10_click)
+bouton_plus_10.bind("Button<1>")
 
 bouton_moins_10.grid(row=0, column=0)
 bouton_moins_1.grid(row=0, column=1)
@@ -147,14 +146,6 @@ window.mainloop()
 
 
 
-#bouton_moins_10.grid(row=2, column=2)
-    #bouton_moins_1.grid(row=2, column=3)
-    #bouton_moins_0_25.grid(row=2, column=4)
-    #texte_vitesse.grid(row=1, column=5)
-    #bouton_reset.grid(row=2, column=5)
-    #bouton_plus_0_25.grid(row=2, column=6)
-    #bouton_plus_1.grid(row=2, column=7)
-    #bouton_plus_10.grid(row=2, column=8)
 
     #bouton_Play = Button(window, text = "Play",command=fonction_play)
     #bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
@@ -164,13 +155,6 @@ window.mainloop()
     #" creer le bouton, il faut qu'il s'appelle comme ca car il est appeler comme ca dans interface graphique lui c'est row=1 ,column=0,padx=20"
     #bouton_Next = Button(window ,text="Next",command=step)
     #bouton_Next.grid(row=2, column=0, padx=20,pady=20)
-
-"""test pour voir où sont les colonnes"""
-"""l = ["bouton" + str(i) for i in range(15)]
-for b in l:
-n = int(b[-1])
-b = Button(window, text=b[-1])
-b.grid(row=2, column=n)"""
     
     #bouton_play2.grid(row=2, column=1, ipady=5, ipadx=5)
     #bouton_stop.grid(row=2, column=1, ipady=5, ipadx=5)
