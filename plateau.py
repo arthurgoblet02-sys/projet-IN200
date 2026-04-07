@@ -8,7 +8,7 @@ def Plateau (window):
     taille_case = 500 / side
     colonne = nbr_colonne * taille_case
     ligne = nbr_ligne * taille_case
-    canvas = Canvas (window,width=colonne,height=ligne, bg="white)
+    canvas = Canvas(window,width=colonne,height=ligne, bg="white")
     for i in range(nbr_ligne):
         for j in range(nbr_colonne):
             couleur = "white"
