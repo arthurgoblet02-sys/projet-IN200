@@ -24,7 +24,10 @@ def button_play():
     bouton_play.destroy()
     frame.grid(row=0,column=4,sticky="ne", padx=10,pady=10)
     plateau1 = plateau.Plateau (window)
-    plateau1.grid(row=3, column= 1 ,columnspan=5)
+    plateau1.grid(row=2, column= 1 ,columnspan=5)
+    bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
+    bouton_Pause.grid( row=2,column=0,padx=20)
+    bouton_Next.grid(row=3, column=0, padx=20)
 
 def on_button_plus_10_click():
         global speed 
@@ -85,6 +88,17 @@ def on_button_reset_click():
         else:
             texte_vitesse.config(text="speed \n x" + str((speed)))
 
+def fonction_play():
+        global en_pause
+        en_pause = False
+        print("Play")
+
+def fonction_pause():
+        global en_pause
+        en_pause = True
+        print("Pause")
+
+
 bouton_play = Button (window , text="PLAY", bg="green",fg="white", command=button_play)
 bouton_play.grid(row=1 ,column=1,ipady=10,ipadx=10)
 #bouton_stop = Button(window, text="QUITTER & SAUVEGARDER", bg="red", fg="white", command=quitter)
@@ -105,6 +119,11 @@ bouton_plus_1 = Button(frame, text=">>", command=on_button_plus_1_click)
 
 bouton_plus_10 = Button(frame, text=">>>", command=on_button_plus_10_click)
 bouton_plus_10.bind("Button<1>")
+
+bouton_Play = Button(window, text = "Play",command=fonction_play)
+bouton_Pause = Button(window, text="Pause",command=fonction_pause)
+bouton_Next = Button(window ,text="Next")
+
 
 bouton_moins_10.grid(row=0, column=0)
 bouton_moins_1.grid(row=0, column=1)
