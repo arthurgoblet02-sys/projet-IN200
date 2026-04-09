@@ -11,4 +11,5 @@ from tkinter import *
 #" creer le bouton, il faut qu'il s'appelle comme ca car il est appeler comme ca dans interface graphique lui c'est row=1 ,column=0,padx=20"
 #bouton_Next = Button(window ,text="Next",command=step)
 #bouton_Next.grid(row=2, column=0, padx=20,pady=20)
-
+#bouton_Sauvegarde = Button(window, text="Sauvegarder", command=fonction_sauvegarde)#
+#bouton_Charger = Button(window, text="Charger", command=fonction_charger)# "creer la fonction charger qui va permettre de charger une partie sauvegarder et de continuer a jouer a partir de la partie charger"
