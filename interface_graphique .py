@@ -8,12 +8,17 @@ import plateau
 from valeurs_initiales import speed 
 from time import sleep 
 from fonctions import *
+from PIL import Image, ImageTk
 
 window = Tk()
 window.title("Jeu de la fourmi de Langton")
 window.geometry("850x600")
 
-fond = PhotoImage(file = "fond.png",master=window)
+img = Image.open("image_jeu.png")
+img = img.resize((850, 600))  
+fond = ImageTk.PhotoImage(img)
+
+#fond = PhotoImage(file = "image_jeu.png",master=window)
 arriere_plan = Label(window ,image =fond) 
 arriere_plan.grid(row=0, column=0, rowspan=15, columnspan=15)
 window.grid_rowconfigure(1, weight=1)
@@ -24,10 +29,10 @@ def button_play():
     bouton_play.destroy()
     frame.grid(row=0,column=4,sticky="ne", padx=10,pady=10)
     plateau1 = plateau.Plateau (window)
-    plateau1.grid(row=2, column= 1 ,columnspan=5)
+    plateau1.grid(row=1, column= 1 ,columnspan=5)
     bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
-    bouton_Pause.grid( row=2,column=0,padx=20)
-    bouton_Next.grid(row=3, column=0, padx=20)
+    bouton_Pause.grid( row=1,column=0,padx=20)
+    bouton_Next.grid(row=2, column=0, padx=20)
 
 def on_button_plus_10_click():
         global speed 
