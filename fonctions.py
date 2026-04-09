@@ -6,7 +6,7 @@ from time import sleep
 
 
 def next_():
-      
+        
       global grille, nb_etape, nb_fourmis, side, liste_etat_case_fourmi, liste_orientation_fourmi, liste_case_fourmi
 
       for k in range(nb_fourmis):
@@ -54,18 +54,6 @@ def back_():
         
         nb_etape -= 1
 
- 
 
-en_pause =  True
-
-def fonction_play():
-        global en_pause
-        en_pause = False
-        print("Play")
-
-def fonction_pause():
-        global en_pause
-        en_pause = True
-        print("Pause")
 
 

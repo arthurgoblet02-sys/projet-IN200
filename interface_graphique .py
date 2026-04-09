@@ -26,6 +26,7 @@ window.grid_columnconfigure(1,weight=1)
 frame=Frame(window)   #"trouver sur internet comment utiliser frame"
 
 def button_play():
+    global plateau1
     bouton_play.destroy()
     frame.grid(row=0,column=4,sticky="ne", padx=10,pady=10)
     plateau1 = plateau.Plateau (window)
@@ -92,16 +93,55 @@ def on_button_reset_click():
             texte_vitesse.config(text="speed \n x" + str(int(speed)))
         else:
             texte_vitesse.config(text="speed \n x" + str((speed)))
+#Bouton next play pause zayd (fonctions)
 
-def fonction_play():
-        global en_pause
-        en_pause = False
-        print("Play")
 
-def fonction_pause():
-        global en_pause
-        en_pause = True
-        print("Pause")
+
+def lancer_play():
+    global en_pause
+    en_pause = False 
+    boucle_jeu()
+
+def mettre_pause():
+    global en_pause  
+    en_pause = True
+
+def faire_un_pas():
+    mettre_pause()
+    next_()            
+    actualiser_affichage()
+
+def boucle_jeu(): # execute en boucle les fonctions avec un  delais de vitesse
+    if not en_pause:
+        next_()  
+        actualiser_affichage()
+        delai = int(1000 / speed) if speed > 0 else 1000
+        window.after(delai, boucle_jeu) # rela,ce la boucle 
+#
+
+
+def actualiser_affichage():
+
+    idx = 1
+    for i in range(len(grille)):
+        for j in range(len(grille[0])):
+            couleur = "black" if grille[i][j] == 1 else "white" # change une case de couleur si 1 noir sinon blanc (visuelle)
+            plateau1.itemconfig(idx, fill=couleur) #color le canva 
+            idx += 1 
+
+
+bouton_Play = Button(window, text="Play",background="green",foreground="white", command=lancer_play)
+#bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
+bouton_Pause = Button(window, text="Pause", background="green",foreground="white",command=mettre_pause)
+bouton_Next = Button(window, text="Next",background="green",foreground="white", command=faire_un_pas)
+
+
+bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
+bouton_Pause.grid( row=1,column=0,padx=20)
+    #" creer le bouton, il faut qu'il s'appelle comme ca car il est appeler comme ca dans interface graphique lui c'est row=1 ,column=0,padx=20"
+bouton_Next.grid(row=2, column=0, padx=20,pady=20)
+    
+#
 
 
 bouton_play = Button (window , text="PLAY", bg="green",fg="white", command=button_play)
@@ -125,9 +165,6 @@ bouton_plus_1 = Button(frame, text=">>", command=on_button_plus_1_click)
 bouton_plus_10 = Button(frame, text=">>>", command=on_button_plus_10_click)
 bouton_plus_10.bind("Button<1>")
 
-bouton_Play = Button(window, text = "Play",command=fonction_play)
-bouton_Pause = Button(window, text="Pause",command=fonction_pause)
-bouton_Next = Button(window ,text="Next")
 
 
 bouton_moins_10.grid(row=0, column=0)
