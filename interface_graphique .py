@@ -18,7 +18,6 @@ img = Image.open("cycle-vie-fourmis.jpeg")
 img = img.resize((850, 600))  
 fond = ImageTk.PhotoImage(img)
 
-#fond = PhotoImage(file = "image_jeu.png",master=window)
 arriere_plan = Label(window ,image =fond) 
 arriere_plan.grid(row=0, column=0, rowspan=15, columnspan=15)
 window.grid_rowconfigure(1, weight=1)
