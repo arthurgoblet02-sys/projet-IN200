@@ -114,7 +114,10 @@ def boucle_jeu(): # execute en boucle les fonctions avec un  delais de vitesse
     if not en_pause:
         next_()  
         actualiser_affichage()
-        delai = int(1000 / speed) if speed > 0 else 1000
+        if speed >0:
+             delai = int(speed * 1000)
+        else:
+             delai = 1000
         window.after(delai, boucle_jeu) # rela,ce la boucle 
 #
 
@@ -124,7 +127,10 @@ def actualiser_affichage():
     idx = 1
     for i in range(len(grille)):
         for j in range(len(grille[0])):
-            couleur = "black" if grille[i][j] == 1 else "white" # change une case de couleur si 1 noir sinon blanc (visuelle)
+            if grille[i][j]==1:
+                 couleur = "black"
+            else:
+                 couleur = "white" # change une case de couleur si 1 noir sinon blanc (visuelle)
             plateau1.itemconfig(idx, fill=couleur) #color le canva 
             idx += 1 
 
