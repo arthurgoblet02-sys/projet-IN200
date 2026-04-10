@@ -114,10 +114,7 @@ def boucle_jeu(): # execute en boucle les fonctions avec un  delais de vitesse
     if not en_pause:
         next_()  
         actualiser_affichage()
-        if speed >0:
-             delai = int(speed * 1000)
-        else:
-             delai = 1000
+        delai = int(1000 / speed)
         window.after(delai, boucle_jeu) # rela,ce la boucle 
 #
 
