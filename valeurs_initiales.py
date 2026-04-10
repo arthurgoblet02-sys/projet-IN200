@@ -1,5 +1,3 @@
-from time import sleep
-from random import randint
 # from sauvegarde import charger # <-- Mis en COM (Désactivés car j'ai pas encore finit )
 
 #pas sur encore 

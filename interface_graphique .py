@@ -1,14 +1,11 @@
 " creation du fond du jeu avec le bouton jouer au milieu de l'ecran."
 "IL MANQUE JUSTE DE RAJOUTER LE PLATEAU QUAND ON CLIQUE SUR LE BOUTON A LA LIGNE 17 "
 
-
 from tkinter import * 
-import tkinter as tk
 from random import randint
 import plateau
 #from bouton import *
 from valeurs_initiales import speed 
-from time import sleep 
 from fonctions import *
 from PIL import Image, ImageTk
 
@@ -206,7 +203,7 @@ bouton_plus_10.grid(row=0, column=7)
 
 """tests pour les settings"""
 
-"""def on_central_square_click():
+def on_central_square_click():
      global liste_case_fourmi
      on_button_reset()
      mettre_pause()
@@ -231,6 +228,15 @@ def on_go_to_step_click():
      while n > nb_etape:
           back_()
      actualiser_affichage()
+
+def on_enter_speed_click():
+     global speed 
+     
+def on_ant_number_click():
+     global nb_fourmis, liste_case_fourmi, liste_etat_case_fourmi, liste_orientation_fourmi
+     
+def on_grid_length_click():
+     global side, grille
 
 menubar = Menu(window)
 menu_settings  = Menu(menubar, tearoff=0)
@@ -258,7 +264,7 @@ menu_settings.add_separator()
 menu_settings.add_command(label="go to step", command=on_go_to_step_click)
 menu_settings.add_command(label="enter speed", command=None)
 
-window.config(menu=menubar)"""
+window.config(menu=menubar)
 
 
 
