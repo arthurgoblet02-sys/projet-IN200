@@ -22,7 +22,7 @@ arriere_plan = Label(window ,image =fond)
 arriere_plan.grid(row=0, column=0, rowspan=15, columnspan=15)
 window.grid_rowconfigure(1, weight=1)
 window.grid_columnconfigure(1,weight=1)
-frame=Frame(window)   #"trouver sur internet comment utiliser frame"
+frame=Frame(window)   
 
 def button_play():
     global plateau1
@@ -182,47 +182,3 @@ bouton_plus_10.grid(row=0, column=7)
 window.mainloop()
 
 "il faudra qu'on rajoute la fourmi"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #bouton_Play = Button(window, text = "Play",command=fonction_play)
-    #bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
-    #" creer le bouton, il faut qu'il s'appelle comme ca car il est appeler comme ca dans interface graphique il ce place a gauche donc mettre row=0 ,column=0,padx=20,pady=20 quand vous le placer   "
-    #bouton_Pause = Button(window, text="Pause",command=fonction_pause)
-    #bouton_Pause.grid( row=1,column=0,padx=20)
-    #" creer le bouton, il faut qu'il s'appelle comme ca car il est appeler comme ca dans interface graphique lui c'est row=1 ,column=0,padx=20"
-    #bouton_Next = Button(window ,text="Next",command=step)
-    #bouton_Next.grid(row=2, column=0, padx=20,pady=20)
-    
-    #bouton_play2.grid(row=2, column=1, ipady=5, ipadx=5)
-    #bouton_stop.grid(row=2, column=1, ipady=5, ipadx=5)
-    #bouton_next.grid(row=2, column=1, ipady=5, ipadx=5)
-    #while not on_button_pause_click:
-         #(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side) = step(grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side)
-         #sleep(1 / speed)
-    #return Plateau (window), bouton_Play, bouton_Pause, bouton_Next,#bouton_stop 
