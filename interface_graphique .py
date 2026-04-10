@@ -14,7 +14,7 @@ window = Tk()
 window.title("Jeu de la fourmi de Langton")
 window.geometry("850x600")
 
-img = Image.open("image_jeu.png")
+img = Image.open("cycle-vie-fourmis.jpeg")
 img = img.resize((850, 600))  
 fond = ImageTk.PhotoImage(img)
 
@@ -136,10 +136,10 @@ bouton_Pause = Button(window, text="Pause", background="green",foreground="white
 bouton_Next = Button(window, text="Next",background="green",foreground="white", command=faire_un_pas)
 
 
-bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
-bouton_Pause.grid( row=1,column=0,padx=20)
+#bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
+#bouton_Pause.grid( row=1,column=0,padx=20)
     #" creer le bouton, il faut qu'il s'appelle comme ca car il est appeler comme ca dans interface graphique lui c'est row=1 ,column=0,padx=20"
-bouton_Next.grid(row=2, column=0, padx=20,pady=20)
+#bouton_Next.grid(row=2, column=0, padx=20,pady=20)
     
 #
 
