@@ -21,4 +21,12 @@ def fonction_sauvegarde():
     global grille, liste_case_fourmi, liste_orientation_fourmi, nb_etape, side, speed, nb_fourmis, liste_etat_case_fourmi
     # Ici manque à remplacer les valeurs par celles de la sauvegarde.
     # je pense a cela car c'est comme ca qu'on modifie les dictionnaires
-    # Exemple : grille = donnees["grille"]
+    # Exemple : grille = donnees["grille"] 
+    grille = donnees["grille"]
+    liste_case_fourmi = donnees["liste_case_fourmi"]
+    liste_orientation_fourmi = donnees["liste_orientation_fourmi"]
+    nb_etape = donnees["nb_etape"]
+    side = donnees["side"] 
+    speed = donnees["speed"]
+    nb_fourmis = donnees["nb_fourmis"]
+    liste_etat_case_fourmi = donnees["liste_etat_case_fourmi"] #mais pas sur #
