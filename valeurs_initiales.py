@@ -15,12 +15,12 @@ from random import randint
 #valeurs initiales à déterminer
 nb_fourmis = 5
 side = 25
-#liste_case_fourmi = [[side//2, side//2] for _ in range(nb_fourmis)]
-liste_case_fourmi = [[randint(0,side-1), randint(0,side-1)] for _ in range(nb_fourmis)]
+liste_case_fourmi = [[side//2, side//2] for _ in range(nb_fourmis)]
+#liste_case_fourmi = [[randint(0,side-1), randint(0,side-1)] for _ in range(nb_fourmis)]
 
 #valeurs initiales fixées
 grille = [side*[0] for _ in range(side)] 
 nb_etape = 0
-speed = 1000
+speed = 1
 liste_orientation_fourmi = nb_fourmis * [0]
 liste_etat_case_fourmi = nb_fourmis * [0]
