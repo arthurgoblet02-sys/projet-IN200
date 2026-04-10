@@ -143,17 +143,29 @@ def on_button_reset():
 def backbutton():
     back_()
     actualiser_affichage()
+    if en_pause == True:
+         back_()
+         actualiser_affichage()
     
 bouton_back = Button(frame2,text = "Back",background="green",foreground="white",command=backbutton)
 bouton_back.grid(row=0,column=1)
 
 bouton_reset = Button(frame2,text="Reset", background="red", foreground="white", command=on_button_reset)
 bouton_reset.grid(row=0,column=2)
+
+
+# Bouton
+bouton_back = Button(window,text = "Back",background="green",foreground="white",command=backbutton)
+bouton_back.grid(row=0,column=1,padx=20)
+bouton_reset = Button(window,text="Reset", background="red", foreground="white", command=on_button_reset)
+bouton_reset.grid(row=0,column=2,padx=20)
+
 bouton_Play = Button(window, text="Play",background="green",foreground="white", command=lancer_play)
-#bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
+
 bouton_Pause = Button(window, text="Pause", background="green",foreground="white",command=mettre_pause)
 bouton_Next = Button(window, text="Next",background="green",foreground="white", command=faire_un_pas)
-
+#bouton_Sauvegarde = Button(window, text="Sauvegarder", command=fonction_sauvegarde)#
+#bouton_Charger = Button(window, text="Charger", command=fonction_charger)#
 
 #bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
 #bouton_Pause.grid( row=1,column=0,padx=20)
