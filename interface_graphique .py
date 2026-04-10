@@ -22,18 +22,20 @@ arriere_plan = Label(window ,image =fond)
 arriere_plan.grid(row=0, column=0, rowspan=15, columnspan=15)
 window.grid_rowconfigure(1, weight=1)
 window.grid_columnconfigure(1,weight=1)
-frame=Frame(window)   
+frame=Frame(window) 
+frame2 = Frame(window)  
 
 def button_play():
     global plateau1
     bouton_play.destroy()
     frame.grid(row=0,column=4,sticky="ne", padx=10,pady=10)
+    frame2.grid(row=1,column=5,padx=10,pady=10)
     plateau1 = plateau.Plateau (window)
     plateau1.grid(row=1, column= 1 ,columnspan=5)
     bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
     bouton_Pause.grid( row=1,column=0,padx=20)
     bouton_Next.grid(row=2, column=0, padx=20)
-
+    
 def on_button_plus_10_click():
         global speed 
         speed += 10
@@ -142,10 +144,11 @@ def backbutton():
     back_()
     actualiser_affichage()
     
-bouton_back = Button(window,text = "Back",background="green",foreground="white",command=backbutton)
-bouton_back.grid(row=0,column=1,padx=20)
-bouton_reset = Button(window,text="Reset", background="red", foreground="white", command=on_button_reset)
-bouton_reset.grid(row=0,column=2,padx=20)
+bouton_back = Button(frame2,text = "Back",background="green",foreground="white",command=backbutton)
+bouton_back.grid(row=0,column=1)
+
+bouton_reset = Button(frame2,text="Reset", background="red", foreground="white", command=on_button_reset)
+bouton_reset.grid(row=0,column=2)
 bouton_Play = Button(window, text="Play",background="green",foreground="white", command=lancer_play)
 #bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
 bouton_Pause = Button(window, text="Pause", background="green",foreground="white",command=mettre_pause)
