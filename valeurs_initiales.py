@@ -13,7 +13,7 @@ from random import randint
 #mettre des numpy.array() partout au lieu des lists
 
 #valeurs initiales à déterminer
-nb_fourmis = 1
+nb_fourmis = 5
 side = 25
 #liste_case_fourmi = [[side//2, side//2] for _ in range(nb_fourmis)]
 liste_case_fourmi = [[randint(0,side-1), randint(0,side-1)] for _ in range(nb_fourmis)]
