@@ -155,10 +155,6 @@ bouton_reset.grid(row=0,column=2)
 
 
 # Bouton
-bouton_back = Button(window,text = "Back",background="green",foreground="white",command=backbutton)
-bouton_back.grid(row=0,column=1,padx=20)
-bouton_reset = Button(window,text="Reset", background="red", foreground="white", command=on_button_reset)
-bouton_reset.grid(row=0,column=2,padx=20)
 
 bouton_Play = Button(window, text="Play",background="green",foreground="white", command=lancer_play)
 
