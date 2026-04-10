@@ -14,7 +14,7 @@ window = Tk()
 window.title("Jeu de la fourmi de Langton")
 window.geometry("850x600")
 
-img = Image.open("image_jeu.png")
+img = Image.open("cycle-vie-fourmis.jpeg")
 img = img.resize((850, 600))  
 fond = ImageTk.PhotoImage(img)
 
