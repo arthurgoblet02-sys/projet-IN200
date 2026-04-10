@@ -10,8 +10,6 @@ from random import randint
 #     (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side, speed) = donnees
 # else:
 
-#mettre des numpy.array() partout au lieu des lists
-
 #valeurs initiales à déterminer
 nb_fourmis = 5
 side = 25
