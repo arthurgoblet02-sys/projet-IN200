@@ -131,7 +131,21 @@ def actualiser_affichage():
             plateau1.itemconfig(idx, fill=couleur) #color le canva 
             idx += 1 
 
+def on_button_reset():
+     global grille
+     for i in range(len(grille)):
+          for j in range(len(grille[0])):
+               grille[i][j] = 0
+               actualiser_affichage()
 
+def backbutton():
+    back_()
+    actualiser_affichage()
+    
+bouton_back = Button(window,text = "Back",background="green",foreground="white",command=backbutton)
+bouton_back.grid(row=0,column=1,padx=20)
+bouton_reset = Button(window,text="Reset", background="red", foreground="white", command=on_button_reset)
+bouton_reset.grid(row=0,column=2,padx=20)
 bouton_Play = Button(window, text="Play",background="green",foreground="white", command=lancer_play)
 #bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
 bouton_Pause = Button(window, text="Pause", background="green",foreground="white",command=mettre_pause)
