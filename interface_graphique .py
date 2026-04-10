@@ -3,6 +3,8 @@
 
 
 from tkinter import * 
+import tkinter as tk
+from random import randint
 import plateau
 #from bouton import *
 from valeurs_initiales import speed 
@@ -184,7 +186,7 @@ bouton_moins_0_25 = Button(frame, text="<", command=on_button_moins_0_25_click)
 
 texte_vitesse = Label(frame, text="speed \n x" + str(speed))
 
-bouton_reset = Button(frame, text="reset", command=on_button_reset_click)
+bouton_reset_vitesse = Button(frame, text="reset", command=on_button_reset_click)
 
 bouton_plus_0_25 = Button(frame, text=">", command=on_button_plus_O_25_click)
 bouton_plus_1 = Button(frame, text=">>", command=on_button_plus_1_click)
@@ -193,15 +195,71 @@ bouton_plus_10 = Button(frame, text=">>>", command=on_button_plus_10_click)
 bouton_plus_10.bind("Button<1>")
 
 
-
 bouton_moins_10.grid(row=0, column=0)
 bouton_moins_1.grid(row=0, column=1)
 bouton_moins_0_25.grid(row=0, column=2)
 texte_vitesse.grid(row=0, column=3)
-bouton_reset.grid(row=0, column=4)
+bouton_reset_vitesse.grid(row=0, column=4)
 bouton_plus_0_25.grid(row=0, column=5)
 bouton_plus_1.grid(row=0, column=6)
 bouton_plus_10.grid(row=0, column=7)
+
+"""tests pour les settings"""
+
+"""def on_central_square_click():
+     global liste_case_fourmi
+     on_button_reset()
+     mettre_pause()
+     for k in range(nb_fourmis):
+        liste_case_fourmi[k] = [side//2, side//2]
+
+def on_random_squares_click():
+     global liste_case_fourmi
+     on_button_reset()
+     mettre_pause()
+     for k in range(nb_fourmis):
+        liste_case_fourmi[k] = [randint(0,side-1), randint(0,side-1)]
+
+def on_go_to_step_click():
+     global nb_etape 
+     mettre_pause()
+     entry = Entry()
+     entry.grid(row=0, column=1)
+     n = int(input("go to step"))
+     while n < nb_etape:
+          next_()
+     while n > nb_etape:
+          back_()
+     actualiser_affichage()
+
+menubar = Menu(window)
+menu_settings  = Menu(menubar, tearoff=0)
+menubar.add_cascade(label="settings", menu=menu_settings)
+
+menu_settings.add_command(label="initial values")
+
+menu_settings.add_separator()
+
+menu_settings.add_command(label="ants number", command=None)
+menu_settings.add_command(label="grid length", command=None)
+
+menu_cases = Menu(menu_settings, tearoff=0)
+menu_settings.add_cascade(label="initial squares", menu=menu_cases)
+menu_cases.add_command(label="central square", command=on_central_square_click)
+menu_cases.add_command(label="random squares", command=on_random_squares_click)
+
+
+menu_settings.add_separator()
+
+menu_settings.add_command(label="other settings")
+
+menu_settings.add_separator()
+
+menu_settings.add_command(label="go to step", command=on_go_to_step_click)
+menu_settings.add_command(label="enter speed", command=None)
+
+window.config(menu=menubar)"""
+
 
 
 window.mainloop()
