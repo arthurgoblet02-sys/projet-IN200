@@ -17,3 +17,4 @@ nb_etape = 0
 speed = 1
 liste_orientation_fourmi = nb_fourmis * [0]
 liste_etat_case_fourmi = nb_fourmis * [0]
+
