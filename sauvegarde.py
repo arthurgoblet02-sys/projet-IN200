@@ -5,8 +5,7 @@ def fonction_sauvegarde():
     donnees = {"liste_case_fourmi": liste_case_fourmi,"liste_orientation_fourmi": liste_orientation_fourmi,"nb_etape": nb_etape,"side": side,
         "speed": speed,"nb_fourmis": nb_fourmis,"liste_etat_case_fourmi": liste_etat_case_fourmi,"grille": grille}
     
-    print("\n--- SAUVEGARDE ---")
-    nom_partie = input("Comment veux-tu appeler cette partie ? (ex: partie1) : ")
+    nom_partie = input("\nNom de la sauvegarde : ")
     nom_fichier = nom_partie + ".json"
     
     fichier = open(nom_fichier, "w")
@@ -16,9 +15,12 @@ def fonction_sauvegarde():
     print("Super ! Partie sauvegardée sous le nom :", nom_fichier)
 
 def fonction_charger():
-    print("\n--- CHARGEMENT ---")
-    nom_partie = input("Quel est le nom de la partie à charger ? (sans le .json) : ")
+    nom_partie = input("\n Fichier a charger : ")
     nom_fichier = nom_partie + ".json"
+    # J'ai  essaye avec un if/else, mais la fonction open() fait planter
+    # le jeu plantae  direct si le joueur se trompe de nom de fichier. 
+    # J'ai trouve cette methode (try/except) sur internet pour eviter le crash 
+    #via https://www.w3schools.com/python/python_try_except.asp:
     
     try:
         fichier = open(nom_fichier, "r")
