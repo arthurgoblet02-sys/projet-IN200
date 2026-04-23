@@ -1,32 +1,49 @@
-import json 
+import json
+from valeurs_initiales import *
 
 def fonction_sauvegarde():
-    global grille, liste_case_fourmi, liste_orientation_fourmi, nb_etape, side, speed, nb_fourmis, liste_etat_case_fourmi
+    donnees = {"liste_case_fourmi": liste_case_fourmi,"liste_orientation_fourmi": liste_orientation_fourmi,"nb_etape": nb_etape,"side": side,
+        "speed": speed,"nb_fourmis": nb_fourmis,"liste_etat_case_fourmi": liste_etat_case_fourmi,"grille": grille}
     
-    # on utilise dictionaire pour stocker les valeur du jeu
-    donnees = {"liste_case_fourmi": liste_case_fourmi,"liste_orientation_fourmi": liste_orientation_fourmi,"nb_etape": nb_etape,
-        "side": side,"speed": speed,"nb_fourmis": nb_fourmis,"liste_etat_case_fourmi": liste_etat_case_fourmi,"grille": grille}
+    print("\n--- SAUVEGARDE ---")
+    nom_partie = input("Comment veux-tu appeler cette partie ? (ex: partie1) : ")
+    nom_fichier = nom_partie + ".json"
     
-    # 1. On ouvre en mode écriture grace a la commande "w"
-    fichier = open("sauvegarde.json", "w")
-     
-    json.dump(donnees, fichier) #vu sur internet que on écrit les données dans le fichier a l'aide de .dump
+    fichier = open(nom_fichier, "w")
+    json.dump(donnees, fichier)
     fichier.close()
-    print("Partie sauvegardée avec succès !")
+    
+    print("Super ! Partie sauvegardée sous le nom :", nom_fichier)
 
-    def fonction_charger():
-        fichier = open("sauvegarde.json", "r")
-        donnees = json.load(fichier)#lit le fichier json en mode lecture et le transforme en dictionnaire
-    fichier.close()
-    global grille, liste_case_fourmi, liste_orientation_fourmi, nb_etape, side, speed, nb_fourmis, liste_etat_case_fourmi
-    # Ici manque à remplacer les valeurs par celles de la sauvegarde.
-    # je pense a cela car c'est comme ca qu'on modifie les dictionnaires
-    # Exemple : grille = donnees["grille"] 
-    grille = donnees["grille"]
-    liste_case_fourmi = donnees["liste_case_fourmi"]
-    liste_orientation_fourmi = donnees["liste_orientation_fourmi"]
-    nb_etape = donnees["nb_etape"]
-    side = donnees["side"] 
-    speed = donnees["speed"]
-    nb_fourmis = donnees["nb_fourmis"]
-    liste_etat_case_fourmi = donnees["liste_etat_case_fourmi"] #mais pas sur #
+def fonction_charger():
+    print("\n--- CHARGEMENT ---")
+    nom_partie = input("Quel est le nom de la partie à charger ? (sans le .json) : ")
+    nom_fichier = nom_partie + ".json"
+    
+    try:
+        fichier = open(nom_fichier, "r")
+        donnees = json.load(fichier)
+        fichier.close()
+        grille.clear()
+        grille.extend(donnees["grille"])
+        
+        liste_case_fourmi.clear()
+        liste_case_fourmi.extend(donnees["liste_case_fourmi"])
+        
+        liste_orientation_fourmi.clear()
+        liste_orientation_fourmi.extend(donnees["liste_orientation_fourmi"])
+        
+        liste_etat_case_fourmi.clear()
+        liste_etat_case_fourmi.extend(donnees["liste_etat_case_fourmi"])
+        
+        # Pour les variables simples (les nombres)
+        global nb_etape, side, speed, nb_fourmis
+        nb_etape = donnees["nb_etape"]
+        side = donnees["side"]
+        speed = donnees["speed"]
+        nb_fourmis = donnees["nb_fourmis"]
+        
+        print("C'est bon, la partie", nom_fichier, "a été chargée !")
+        
+    except FileNotFoundError:
+        print("Erreur : Aucune sauvegarde trouvée avec ce nom (" + nom_fichier + ").")
