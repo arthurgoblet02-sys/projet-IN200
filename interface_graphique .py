@@ -212,3 +212,15 @@ window.config(menu=menubar)
 window.mainloop()
 
 "il faudra qu'on rajoute la fourmi"
+
+
+
+
+
+steps = 10
+
+for k in range(steps):
+    next_()
+    for i in range(side):
+        print(grille[i])
+    print("\n")
