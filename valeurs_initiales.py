@@ -7,8 +7,9 @@
 # else:
 
 #valeurs initiales mofifiables
+
 nb_fourmis = 1
-side = 11
+side = 25
 liste_case_fourmi = [[side//2, side//2] for _ in range(nb_fourmis)]
 
 #valeurs initiales fixées

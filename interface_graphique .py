@@ -5,7 +5,7 @@ from tkinter import *
 from random import randint
 import plateau
 #from bouton import *
-from valeurs_initiales import speed 
+from valeurs_initiales import speed, nb_fourmis
 from fonctions import *
 from sauvegarde import* #seydou
 from PIL import Image, ImageTk
@@ -13,6 +13,11 @@ from PIL import Image, ImageTk
 window = Tk()
 window.title("Jeu de la fourmi de Langton")
 window.geometry("850x600")
+menubar = Menu(window)
+menu_settings  = Menu(menubar, tearoff=0)
+menubar.add_cascade(label="settings", menu=menu_settings)
+
+
 
 img = Image.open("cycle-vie-fourmis.jpeg")
 img = img.resize((850, 600))  
@@ -24,6 +29,24 @@ window.grid_rowconfigure(1, weight=1)
 window.grid_columnconfigure(1,weight=1)
 frame=Frame(window) 
 frame2 = Frame(window)  
+frame3 = Frame(window)
+
+def recuperer ():
+    global nb_fourmis
+    global valeur
+    nb_fourmis = valeur.get()
+    bouton_valider.destroy()
+    champs_nb_fourmis.destroy()     
+
+def nb_fourmi():
+    frame3.grid(row=0,column=1)
+valeur=StringVar()
+champs_nb_fourmis = Entry(frame3, textvariable = valeur)
+champs_nb_fourmis.grid(row=0,column=1)
+bouton_valider= Button(frame3,text="valider",command= recuperer)
+bouton_valider.grid(row=0, column=0 )
+
+
 
 def button_play():
     global plateau1
@@ -205,13 +228,17 @@ bouton_plus_1.grid(row=0, column=6)
 bouton_plus_10.grid(row=0, column=7)
 
 
-menubar = Menu(window)
-menu_settings  = Menu(menubar, tearoff=0)
-menubar.add_cascade(label="settings", menu=menu_settings)
+   
+    
+
+
+
+
+
+menu_settings.add_command(label="nb_fourmi", command=nb_fourmi)
+
+
 window.config(menu=menubar)
-
-
-
 window.mainloop()
 
 "il faudra qu'on rajoute la fourmi"
