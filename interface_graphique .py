@@ -127,8 +127,12 @@ def actualiser_affichage():
         for j in range(len(grille[0])):
             if grille[i][j]==1:
                  couleur = "black"
-            else:
-                 couleur = "white" # change une case de couleur si 1 noir sinon blanc (visuelle)
+            elif grille[i][j] == 0:
+                couleur = "white"
+            elif grille[i][j] == 2:
+                couleur = "blue"
+            else : 
+                couleur ="red" 
             plateau1.itemconfig(idx, fill=couleur) #color le canva 
             idx += 1 
 
