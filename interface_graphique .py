@@ -7,6 +7,7 @@ import plateau
 #from bouton import *
 from valeurs_initiales import speed 
 from fonctions import *
+from sauvegarde import* #seydou
 from PIL import Image, ImageTk
 
 window = Tk()
@@ -214,3 +215,119 @@ window.config(menu=menubar)
 window.mainloop()
 
 "il faudra qu'on rajoute la fourmi"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#bouton_Sauvegarde = Button(window, text="Sauvegarder", command=fonction_sauvegarde)#
+#bouton_Charger = Button(window, text="Charger", command=fonction_charger)# "creer la fonction charger qui va permettre de charger une partie sauvegarder et de continuer a jouer a partir de la partie charger"
+   # bouton_Sauvegarde.grid(row=, column=0, padx=)#
+    #bouton_Charger.grid(row=, column=0, padx=, pady=)#arthur va placer
+    #indication:::
+    #on doit indique dans la conssole(le nom du fichier) après avoir cliqué sur le bouton sauvegarder 
+    #pour charger  faut que t'appuie sur le bouton charger et que tu indique le nom du fichier dans la console  après appuie sur le bouton play#
