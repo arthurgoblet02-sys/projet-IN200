@@ -35,8 +35,7 @@ def recuperer ():
     global nb_fourmis
     global valeur
     nb_fourmis = valeur.get()
-    bouton_valider.destroy()
-    champs_nb_fourmis.destroy()     
+    frame3.destroy()    
 
 def nb_fourmi():
     frame3.grid(row=0,column=1)
