@@ -203,7 +203,7 @@ bouton_plus_10.grid(row=0, column=7)
 
 """tests pour les settings"""
 
-def on_central_square_click():
+"""def on_central_square_click():
      global liste_case_fourmi
      on_button_reset()
      mettre_pause()
@@ -264,7 +264,7 @@ menu_settings.add_separator()
 menu_settings.add_command(label="go to step", command=on_go_to_step_click)
 menu_settings.add_command(label="enter speed", command=None)
 
-window.config(menu=menubar)
+window.config(menu=menubar)"""
 
 
 
