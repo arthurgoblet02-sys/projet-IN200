@@ -144,11 +144,9 @@ def on_button_reset():
                actualiser_affichage()
 
 def backbutton():
+    mettre_pause()
     back_()
     actualiser_affichage()
-    if en_pause == True:
-         back_()
-         actualiser_affichage()
     
 bouton_back = Button(frame2,text = "Back",background="green",foreground="white",command=backbutton)
 bouton_back.grid(row=0,column=1)
