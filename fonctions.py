@@ -1,5 +1,7 @@
 from valeurs_initiales import *
 from math import sin, cos, radians
+from tkinter import *
+
 
 #4 états : 0 (blanc), 1 (noir), 2 (blue), 3 (rouge) - orientation : D, G, G, D
 
