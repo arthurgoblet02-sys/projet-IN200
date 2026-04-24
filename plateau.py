@@ -17,12 +17,12 @@ def Plateau (window):
             x2 = x1 + taille_case
             y2 = y1 + taille_case
             if grille[i][j] == 1:
-                couleur = "black"
+                couleur = "blue"
             elif grille[i][j] == 0:
                 couleur = "white"
             elif grille[i][j] == 2:
                 couleur = "green"
             else : 
-                couleur ="red"
+                couleur ="yellow"
             canvas.create_rectangle (x1,y1,x2,y2 , fill= couleur, outline= "white" ) 
     return canvas
