@@ -8,6 +8,8 @@
 
 #valeurs initiales mofifiables
 
+"HELIO"
+
 nb_fourmis = 1
 side = 25
 liste_case_fourmi = [[side//2, side//2] for _ in range(nb_fourmis)]
