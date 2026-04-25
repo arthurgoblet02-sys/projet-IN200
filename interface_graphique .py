@@ -1,14 +1,14 @@
-" creation du fond du jeu avec le bouton jouer au milieu de l'ecran."
-"IL MANQUE JUSTE DE RAJOUTER LE PLATEAU QUAND ON CLIQUE SUR LE BOUTON A LA LIGNE 17 "
 
 from tkinter import * 
 from random import randint
 import plateau
-#from bouton import *
-from valeurs_initiales import speed, nb_fourmis
+from valeurs_initiales import speed
+import valeurs_initiales as val
 from fonctions import *
 from sauvegarde import* #seydou
 from PIL import Image, ImageTk
+
+"ARTHUR"
 
 window = Tk()
 window.title("Jeu de la fourmi de Langton")
@@ -27,22 +27,26 @@ arriere_plan = Label(window ,image =fond)
 arriere_plan.grid(row=0, column=0, rowspan=15, columnspan=15)
 window.grid_rowconfigure(1, weight=1)
 window.grid_columnconfigure(1,weight=1)
-frame=Frame(window) 
+frame=Frame(window,bg="green") 
 frame2 = Frame(window)  
-frame3 = Frame(window)
+frame3 = Frame(window,bg="green")
+
 
 def recuperer ():
-    global nb_fourmis
     global valeur
-    nb_fourmis = valeur.get()
-    frame3.destroy()    
+    val.nb_fourmis = int(valeur.get())
+    val.liste_case_fourmi = [[side//2, side//2] for _ in range(val.nb_fourmis)]
+    val.liste_orientation_fourmi = val.nb_fourmis * [0]
+    val.liste_etat_case_fourmi = val.nb_fourmis * [0]
+    frame3.grid_forget()    
 
 def nb_fourmi():
     frame3.grid(row=0,column=1)
+global valeur 
 valeur=StringVar()
 champs_nb_fourmis = Entry(frame3, textvariable = valeur)
 champs_nb_fourmis.grid(row=0,column=1)
-bouton_valider= Button(frame3,text="valider",command= recuperer)
+bouton_valider= Button(frame3,text="valider",bg="green",fg="white",command= recuperer)
 bouton_valider.grid(row=0, column=0 )
 
 
@@ -50,6 +54,7 @@ bouton_valider.grid(row=0, column=0 )
 def button_play():
     global plateau1
     bouton_play.destroy()
+    bouton_Charger.destroy()
     frame.grid(row=0,column=4,sticky="ne", padx=10,pady=10)
     frame2.grid(row=1,column=5,padx=10,pady=10)
     plateau1 = plateau.Plateau (window)
@@ -57,7 +62,11 @@ def button_play():
     bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
     bouton_Pause.grid( row=1,column=0,padx=20)
     bouton_Next.grid(row=2, column=0, padx=20)
-    
+    bouton_Sauvegarde.grid(row=0, column=2)
+
+"HELIO"
+
+
 def on_button_plus_10_click():
         global speed 
         speed += 10
@@ -116,9 +125,9 @@ def on_button_reset_click():
             texte_vitesse.config(text="speed \n x" + str(int(speed)))
         else:
             texte_vitesse.config(text="speed \n x" + str((speed)))
-#Bouton next play pause zayd (fonctions)
 
 
+"ZAYD"
 
 def lancer_play():
     global en_pause
@@ -178,44 +187,34 @@ bouton_reset = Button(frame2,text="Reset", background="red", foreground="white",
 bouton_reset.grid(row=0,column=2)
 
 
-# Bouton
+
 
 bouton_Play = Button(window, text="Play",background="green",foreground="white", command=lancer_play)
 
 bouton_Pause = Button(window, text="Pause", background="green",foreground="white",command=mettre_pause)
 bouton_Next = Button(window, text="Next",background="green",foreground="white", command=faire_un_pas)
-#bouton_Sauvegarde = Button(window, text="Sauvegarder", command=fonction_sauvegarde)#
-#bouton_Charger = Button(window, text="Charger", command=fonction_charger)#
 
-#bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
-#bouton_Pause.grid( row=1,column=0,padx=20)
-    #" creer le bouton, il faut qu'il s'appelle comme ca car il est appeler comme ca dans interface graphique lui c'est row=1 ,column=0,padx=20"
-#bouton_Next.grid(row=2, column=0, padx=20,pady=20)
-    
-#
-
+"HELIO + ARTHUR pour le frame "
 
 bouton_play = Button (window , text="PLAY", bg="green",fg="white", command=button_play)
 bouton_play.grid(row=1 ,column=1,ipady=10,ipadx=10)
-#bouton_stop = Button(window, text="QUITTER & SAUVEGARDER", bg="red", fg="white", command=quitter)
-#frame=Frame(window)
 
-bouton_moins_10 = Button(frame, text="<<<", command=on_button_moins_10_click)
+bouton_moins_10 = Button(frame, text="<<<",bg="green",fg="white", command=on_button_moins_10_click)
 
-bouton_moins_1 = Button(frame, text="<<", command=on_button_moins_1_click)
+bouton_moins_1 = Button(frame, text="<<",bg="green",fg="white", command=on_button_moins_1_click)
 
-bouton_moins_0_25 = Button(frame, text="<", command=on_button_moins_0_25_click)
+bouton_moins_0_25 = Button(frame, text="<",bg="green",fg="white", command=on_button_moins_0_25_click)
 
-texte_vitesse = Label(frame, text="speed \n x" + str(speed))
+texte_vitesse = Label(frame, text="speed \n x" + str(speed),bg="green",fg="white")
 
-bouton_reset_vitesse = Button(frame, text="reset", command=on_button_reset_click)
+bouton_reset_vitesse = Button(frame, text="reset",bg="green",fg="white", command=on_button_reset_click)
 
-bouton_plus_0_25 = Button(frame, text=">", command=on_button_plus_O_25_click)
-bouton_plus_1 = Button(frame, text=">>", command=on_button_plus_1_click)
+bouton_plus_0_25 = Button(frame, text=">",bg="green",fg="white", command=on_button_plus_O_25_click)
+bouton_plus_1 = Button(frame, text=">>",bg="green",fg="white", command=on_button_plus_1_click)
 
-bouton_plus_10 = Button(frame, text=">>>", command=on_button_plus_10_click)
+bouton_plus_10 = Button(frame, text=">>>",bg="green",fg="white", command=on_button_plus_10_click)
 bouton_plus_10.bind("Button<1>")
-
+"ARTHUR"
 
 bouton_moins_10.grid(row=0, column=0)
 bouton_moins_1.grid(row=0, column=1)
@@ -226,134 +225,21 @@ bouton_plus_0_25.grid(row=0, column=5)
 bouton_plus_1.grid(row=0, column=6)
 bouton_plus_10.grid(row=0, column=7)
 
-
-   
+"SEYDOU + ARTHUR"
     
+bouton_Sauvegarde = Button(window, text="Sauvegarder",bg="green",fg="white", command=fonction_sauvegarde)
+
+bouton_Charger = Button(window, text="Charger une sauvegarde",bg="green",fg="white", command=fonction_charger)
+bouton_Charger.grid(row=0 ,column=1,ipady=10,ipadx=10)
 
 
 
-
-
+"HELIO"
 menu_settings.add_command(label="nb_fourmi", command=nb_fourmi)
 
+"ARTHUR"
 
 window.config(menu=menubar)
 window.mainloop()
 
 "il faudra qu'on rajoute la fourmi"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#bouton_Sauvegarde = Button(window, text="Sauvegarder", command=fonction_sauvegarde)#
-#bouton_Charger = Button(window, text="Charger", command=fonction_charger)# "creer la fonction charger qui va permettre de charger une partie sauvegarder et de continuer a jouer a partir de la partie charger"
-   # bouton_Sauvegarde.grid(row=, column=0, padx=)#
-    #bouton_Charger.grid(row=, column=0, padx=, pady=)#arthur va placer
-    #indication:::
-    #on doit indique dans la conssole(le nom du fichier) après avoir cliqué sur le bouton sauvegarder 
-    #pour charger  faut que t'appuie sur le bouton charger et que tu indique le nom du fichier dans la console  après appuie sur le bouton play#
