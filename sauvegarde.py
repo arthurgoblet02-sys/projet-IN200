@@ -1,3 +1,6 @@
+
+"SEYDOU"
+
 import json
 from valeurs_initiales import *
 
