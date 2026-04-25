@@ -1,4 +1,7 @@
 
+"lien de la doc utiliser par ARTHUR : https://tkdocs.com/tutorial/index.html "
+
+
 from tkinter import * 
 from random import randint
 import plateau
@@ -13,11 +16,14 @@ from PIL import Image, ImageTk
 window = Tk()
 window.title("Jeu de la fourmi de Langton")
 window.geometry("850x600")
+
+"HELIO"
+
 menubar = Menu(window)
 menu_settings  = Menu(menubar, tearoff=0)
 menubar.add_cascade(label="settings", menu=menu_settings)
 
-
+"ARTHUR"
 
 img = Image.open("cycle-vie-fourmis.jpeg")
 img = img.resize((850, 600))  
@@ -227,17 +233,16 @@ bouton_plus_10.grid(row=0, column=7)
 
 "SEYDOU + ARTHUR"
     
-bouton_Sauvegarde = Button(window, text="Sauvegarder",bg="green",fg="white", command=fonction_sauvegarde)
 
 bouton_Charger = Button(window, text="Charger une sauvegarde",bg="green",fg="white", command=fonction_charger)
 bouton_Charger.grid(row=0 ,column=1,ipady=10,ipadx=10)
 
 
 
-"HELIO"
-menu_settings.add_command(label="nb_fourmi", command=nb_fourmi)
-
 "ARTHUR"
+menu_settings.add_command(label="nb_fourmi", command=nb_fourmi)
+menu_settings.add_command(label="SAUVEGARDER", command=fonction_sauvegarde)
+
 
 window.config(menu=menubar)
 window.mainloop()
