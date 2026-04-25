@@ -1,4 +1,6 @@
-"creer une fonction Plateau pour creer le plateau pour que je puisse le mettre dans interface graphique   "
+
+"ARTHUR + HELIO pour le 500 / side"
+
 from valeurs_initiales import grille, side
 from tkinter import *
 
