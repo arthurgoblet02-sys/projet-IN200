@@ -68,7 +68,7 @@ def button_play():
     bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
     bouton_Pause.grid( row=1,column=0,padx=20)
     bouton_Next.grid(row=2, column=0, padx=20)
-    bouton_Sauvegarde.grid(row=0, column=2)
+    
 
 "HELIO"
 
