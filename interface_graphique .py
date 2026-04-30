@@ -36,25 +36,46 @@ window.grid_columnconfigure(1,weight=1)
 frame=Frame(window,bg="green") 
 frame2 = Frame(window)  
 frame3 = Frame(window,bg="green")
+frame4 = Frame(window,bg="green")
+
+def ok ():
+    frame4.grid_forget()
+    frame3.grid(row=0,column=1)
+
+def nombre (val):
+    if val =="":
+          return False
+    for c in val :
+        if ord(c) < ord(0) or ord(c) > ord(9):
+            return False
+    return True
 
 
 def recuperer ():
-    global valeur
-    val.nb_fourmis = int(valeur.get())
-    val.liste_case_fourmi = [[side//2, side//2] for _ in range(val.nb_fourmis)]
-    val.liste_orientation_fourmi = val.nb_fourmis * [0]
-    val.liste_etat_case_fourmi = val.nb_fourmis * [0]
-    frame3.grid_forget()    
+    global champs_nb_fourmis
+    valeur = champs_nb_fourmis.get()
+    if nombre(valeur) : 
+        val.nb_fourmis = int(champs_nb_fourmis.get())
+        val.liste_case_fourmi = [[side//2, side//2] for _ in range(val.nb_fourmis)]
+        val.liste_orientation_fourmi = val.nb_fourmis * [0]
+        val.liste_etat_case_fourmi = val.nb_fourmis * [0]
+        frame3.grid_forget()    
+    else:
+        frame3.grid_forget()
+        frame4.grid(row=0,column=1)
+         
+
 
 def nb_fourmi():
     frame3.grid(row=0,column=1)
-global valeur 
-valeur=StringVar()
-champs_nb_fourmis = Entry(frame3, textvariable = valeur)
+champs_nb_fourmis = Entry(frame3)
 champs_nb_fourmis.grid(row=0,column=1)
 bouton_valider= Button(frame3,text="valider",bg="green",fg="white",command= recuperer)
 bouton_valider.grid(row=0, column=0 )
-
+message = Label(frame4, text= "Ce n'est pas un nombre. Entrez un nombre s'il vous plaît.",fg="black",bg="red")
+bouton_ok=Button(frame4,text=ok,bg="green",fg="black",command= ok)
+message.grid(row=0,column=1)
+bouton_ok.grid(row=1,column=1)
 
 
 def button_play():
