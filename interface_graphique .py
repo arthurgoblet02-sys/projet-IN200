@@ -36,7 +36,7 @@ window.grid_columnconfigure(1,weight=1)
 frame=Frame(window,bg="green") 
 frame2 = Frame(window)  
 frame3 = Frame(window,bg="green")
-frame4 = Frame(window,bg="green")
+frame4 = Frame(window,bg="red")
 
 def ok ():
     frame4.grid_forget()
@@ -46,7 +46,7 @@ def nombre (val):
     if val =="":
           return False
     for c in val :
-        if ord(c) < ord(0) or ord(c) > ord(9):
+        if ord(c) < ord("0") or ord(c) > ord("9"):
             return False
     return True
 
@@ -55,7 +55,7 @@ def recuperer ():
     global champs_nb_fourmis
     valeur = champs_nb_fourmis.get()
     if nombre(valeur) : 
-        val.nb_fourmis = int(champs_nb_fourmis.get())
+        val.nb_fourmis = int(valeur)
         val.liste_case_fourmi = [[side//2, side//2] for _ in range(val.nb_fourmis)]
         val.liste_orientation_fourmi = val.nb_fourmis * [0]
         val.liste_etat_case_fourmi = val.nb_fourmis * [0]
@@ -68,20 +68,14 @@ def recuperer ():
 
 def nb_fourmi():
     frame3.grid(row=0,column=1)
-champs_nb_fourmis = Entry(frame3)
-champs_nb_fourmis.grid(row=0,column=1)
-bouton_valider= Button(frame3,text="valider",bg="green",fg="white",command= recuperer)
-bouton_valider.grid(row=0, column=0 )
-message = Label(frame4, text= "Ce n'est pas un nombre. Entrez un nombre s'il vous plaît.",fg="black",bg="red")
-bouton_ok=Button(frame4,text=ok,bg="green",fg="black",command= ok)
-message.grid(row=0,column=1)
-bouton_ok.grid(row=1,column=1)
+
 
 
 def button_play():
     global plateau1
     bouton_play.destroy()
     bouton_Charger.destroy()
+    texte.destroy()
     frame.grid(row=0,column=4,sticky="ne", padx=10,pady=10)
     frame2.grid(row=1,column=5,padx=10,pady=10)
     plateau1 = plateau.Plateau (window)
@@ -223,8 +217,6 @@ bouton_Next = Button(window, text="Next",background="green",foreground="white", 
 
 "HELIO + ARTHUR pour le frame "
 
-bouton_play = Button (window , text="PLAY", bg="green",fg="white", command=button_play)
-bouton_play.grid(row=1 ,column=1,ipady=10,ipadx=10)
 
 bouton_moins_10 = Button(frame, text="<<<",bg="green",fg="white", command=on_button_moins_10_click)
 
@@ -252,11 +244,31 @@ bouton_plus_0_25.grid(row=0, column=5)
 bouton_plus_1.grid(row=0, column=6)
 bouton_plus_10.grid(row=0, column=7)
 
+bouton_play = Button (window , text="PLAY", bg="green",fg="white", command=button_play,font=("Arial", 15))
+bouton_play.grid(row=1 ,column=1)
+
+texte= Label(window,text="LA FOURMI DE LANGTON !!",bg='green',fg= "black",font=("Arial", 30))
+texte.grid(row=0 ,column=1)
+
+
+champs_nb_fourmis = Entry(frame3)
+champs_nb_fourmis.grid(row=0,column=1)
+
+bouton_valider= Button(frame3,text="valider",bg="green",fg="white",command= recuperer)
+bouton_valider.grid(row=0, column=0 )
+
+message = Label(frame4, text= "Ce n'est pas un nombre. Entrez un nombre s'il vous plaît.",fg="black",bg="red")
+message.grid(row=0,column=1)
+
+bouton_ok=Button(frame4,text="ok",bg="red",fg="black",command= ok)
+bouton_ok.grid(row=1,column=1)
+
+
 "SEYDOU + ARTHUR"
     
 
-bouton_Charger = Button(window, text="Charger une sauvegarde",bg="green",fg="white", command=fonction_charger)
-bouton_Charger.grid(row=0 ,column=1,ipady=10,ipadx=10)
+bouton_Charger = Button(window, text="Charger",bg="green",fg="black", command=fonction_charger)
+bouton_Charger.grid(row=1 ,column=0)
 
 
 
