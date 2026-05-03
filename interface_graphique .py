@@ -10,12 +10,14 @@ import valeurs_initiales as val
 from fonctions import *
 from sauvegarde import* #seydou
 from PIL import Image, ImageTk
+from math import cos, sin, radians
 
-"ARTHUR"
+"ARTHUR" + "ZAYD"
 
 window = Tk()
 window.title("Jeu de la fourmi de Langton")
 window.geometry("850x600")
+dessins_fourmis = []
 
 "HELIO"
 
@@ -174,12 +176,12 @@ def boucle_jeu(): # execute en boucle les fonctions avec un  delais de vitesse
 
 
 def actualiser_affichage():
-
+    global dessins_fourmis
     idx = 1
     for i in range(len(grille)):
         for j in range(len(grille[0])):
             if grille[i][j]==1:
-                 couleur = "black"
+                couleur = "black"
             elif grille[i][j] == 0:
                 couleur = "white"
             elif grille[i][j] == 2:
@@ -188,13 +190,42 @@ def actualiser_affichage():
                 couleur ="red" 
             plateau1.itemconfig(idx, fill=couleur) #color le canva 
             idx += 1 
+    
+    for d in dessins_fourmis:
+        plateau1.delete(d)
+    dessins_fourmis = []
+
+    taille_case = 500/ val.side 
+
+    for k in range(val.nb_fourmis):
+        i = val.liste_case_fourmi[k][0]
+        j = val.liste_case_fourmi[k][1]
+
+        angle = val.liste_orientation_fourmi[k]
+        x_centre =  j * taille_case +   (taille_case/2)
+        y_centre= i * taille_case + (taille_case/2)
+        
+        longeur = taille_case*0.4   
+        x1= x_centre + longeur *cos(radians(angle))
+        y1 = y_centre - longeur * sin(radians(angle))
+
+        x2 = x_centre + longeur *cos(radians(angle +140))
+        y2 =y_centre - longeur * sin(radians(angle +140))
+
+        x3 = x_centre + longeur *cos(radians(angle -140))
+        y3 =y_centre - longeur * sin(radians(angle -140))
+        
+        fourmi_triangle = plateau1.create_polygon(x1,y1,x2,y2,x3,y3,fill='red',outline='black')
+
+        dessins_fourmis.append(fourmi_triangle)
+
 
 def on_button_reset():
-     global grille
-     for i in range(len(grille)):
-          for j in range(len(grille[0])):
-               grille[i][j] = 0
-               actualiser_affichage()
+    global grille
+    for i in range(len(grille)):
+        for j in range(len(grille[0])):
+            grille[i][j] = 0
+            actualiser_affichage()
 
 def backbutton():
     mettre_pause()
@@ -281,3 +312,4 @@ window.config(menu=menubar)
 window.mainloop()
 
 "il faudra qu'on rajoute la fourmi"
+
