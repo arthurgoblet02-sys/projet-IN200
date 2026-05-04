@@ -6,9 +6,9 @@
 #     (grille, case_fourmi, orientation_fourmi, i, j, nb_etape, side, speed) = donnees
 # else:
 
-#valeurs initiales mofifiables
-
 "HELIO"
+
+#valeurs initiales mofifiables
 
 nb_fourmis = 1
 side = 25
