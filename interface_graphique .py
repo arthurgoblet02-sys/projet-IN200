@@ -18,6 +18,7 @@ window = Tk()
 window.title("Jeu de la fourmi de Langton")
 window.geometry("850x600")
 dessins_fourmis = []
+en_pause = True
 
 "HELIO"
 
@@ -65,7 +66,6 @@ def recuperer ():
     else:
         frame3.grid_forget()
         frame4.grid(row=0,column=1)
-         
 
 
 def nb_fourmi():
@@ -85,6 +85,7 @@ def button_play():
     bouton_Play.grid(row = 0,column=0,padx=20,pady=20)
     bouton_Pause.grid( row=1,column=0,padx=20)
     bouton_Next.grid(row=2, column=0, padx=20)
+    plateau1.bind("<Button-1>", gestion_clic)
     
 
 "HELIO"
@@ -151,6 +152,18 @@ def on_button_reset_click():
 
 
 "ZAYD"
+
+def gestion_clic(event):
+    if en_pause:
+        taille_case = 500/val.side
+        j = int(event.x /taille_case)
+        i = int(event.y /taille_case)
+        if 0<=i < val.side and 0 <= j < val.side:
+            if grille[i][j]==0:
+                grille[i][j] = 1 
+            else:
+                grille[i][j]=0
+            actualiser_affichage()
 
 def lancer_play():
     global en_pause
@@ -344,7 +357,11 @@ menu_settings.add_command(label="SAUVEGARDER", command=fonction_sauvegarde)
 
 
 window.config(menu=menubar)
+
+
+
+
+
 window.mainloop()
 
-"il faudra qu'on rajoute la fourmi"
-
+"FIN"

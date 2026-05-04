@@ -35,7 +35,7 @@ def next_():
                 #changement de couleur de la case passée 
                 grille[ancienne_ligne][ancienne_colonne] = (grille[ancienne_ligne][ancienne_colonne] + 1) % 4
         
-      nb_etape += 1
+      val.nb_etape += 1
 
 
 def back_():
@@ -59,7 +59,7 @@ def back_():
                 else:
                         val.liste_orientation_fourmi[k] = (val.liste_orientation_fourmi[k] - 90) % 360
         
-        nb_etape -= 1
+        val.nb_etape -= 1
 
 
 
