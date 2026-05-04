@@ -187,7 +187,7 @@ def boucle_jeu(): # execute en boucle les fonctions avec un  delais de vitesse
         window.after(delai, boucle_jeu) # relance la boucle 
 
 #compteur de pas 
-compteur_de_pas = Label(frame,text= "Pas:0",bg="green",fg="white",font=("Arial",12,"bold"))
+compteur_de_pas = Label(frame,text= "Etape:0",bg="green",fg="white",font=("Arial",12,"bold"))
 compteur_de_pas.grid(row=1,column=3,columnspan=2)
 
 def actualiser_affichage():
@@ -206,7 +206,7 @@ def actualiser_affichage():
             plateau1.itemconfig(idx, fill=couleur) #color le canva 
             idx += 1 
     #maj du compteur 
-    compteur_de_pas.config(text="Pas : " + str(val.nb_etape))
+    compteur_de_pas.config(text="Etape : " + str(val.nb_etape))
     
     # on dessine lafourmi 
 
@@ -279,7 +279,7 @@ def afficher_credit():
     frame_credit = Frame(window,bg="green",bd = 5,relief='ridge')
     frame_credit.grid(row=1,column=1,padx=20,pady=20)
 
-    textedefin = "GAME OVER\n\nCreated By :\n\nArthur Goblet\nHelio Lancon\nZayd Hmadounacer\nSeydou Sylla "
+    textedefin = "END\n\nCreated By :\n\nArthur Goblet\nHelio Lancon\nZayd Hmadounacer\nSeydou Sylla "
     label_credits = Label(frame_credit,text=textedefin,font=("Arial",18,"bold"),bg ='green',fg='white',justify="center")
     label_credits.pack(padx=20,pady=20)
 
@@ -326,7 +326,7 @@ bouton_plus_10.grid(row=0, column=7)
 bouton_play = Button (window , text="PLAY", bg="green",fg="white", command=button_play,font=("Arial", 15))
 bouton_play.grid(row=1 ,column=1)
 
-texte= Label(window,text="LA FOURMI DE LANGTON !!",bg='green',fg= "black",font=("Arial", 30))
+texte= Label(window,text="LA FOURMI DE LANGTON ",bg='green',fg= "black",font=("Arial", 30))
 texte.grid(row=0 ,column=1)
 
 
