@@ -26,7 +26,7 @@ menubar = Menu(window)
 menu_settings  = Menu(menubar, tearoff=0)
 menubar.add_cascade(label="settings", menu=menu_settings)
 
-"ARTHUR"
+"ARTHUR + ZAYD pour le plateau1.bind"
 
 img = Image.open("cycle-vie-fourmis.jpeg")
 img = img.resize((850, 600))  
